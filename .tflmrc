@@ -1,0 +1,5 @@
+export XTENSA_BASE="/cygdrive/c/usr/xtensa/XtDevT"
+export XTENSA_CORE="merlinK_tie_swupgrade"
+export XTENSA_TOOLS_VERSION="RI-2021.8-win32"
+source tflite_env/Scripts/activate
+export PATH=$PATH:"/cygdrive/c/usr/xtensa/XtDevTools/install/tools/RI-2021.8-win32/XtensaTools/bin/"
