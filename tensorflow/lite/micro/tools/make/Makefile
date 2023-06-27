@@ -538,7 +538,7 @@ ifneq ($(OPTIMIZED_KERNEL_DIR),)
 
   include $(MAKEFILE_DIR)/ext_libs/$(OPTIMIZED_KERNEL_DIR).inc
   # Specialize for the optimized kernels
-  MICROLITE_CC_KERNEL_SRCS := $(shell python3 $(MAKEFILE_DIR)/specialize_files.py \
+  MICROLITE_CC_KERNEL_SRCS := $(shell /cygdrive/c/git/tflite-micro/tflite_env/Scripts/python.exe $(MAKEFILE_DIR)/specialize_files.py \
 		--base_files "$(MICROLITE_CC_KERNEL_SRCS)" \
 		--specialize_directory $(PATH_TO_OPTIMIZED_KERNELS))
 
@@ -568,7 +568,7 @@ ifneq ($(CO_PROCESSOR),)
   include $(MAKEFILE_DIR)/ext_libs/$(CO_PROCESSOR).inc
   # Specialize for the coprocessor kernels.
   PATH_TO_COPROCESSOR_KERNELS := $(TENSORFLOW_ROOT)tensorflow/lite/micro/kernels/$(CO_PROCESSOR)
-  MICROLITE_CC_KERNEL_SRCS := $(shell python3 $(MAKEFILE_DIR)/specialize_files.py \
+  MICROLITE_CC_KERNEL_SRCS := $(shell /cygdrive/c/git/tflite-micro/tflite_env/Scripts/python.exe $(MAKEFILE_DIR)/specialize_files.py \
     --base_files "$(MICROLITE_CC_KERNEL_SRCS)" \
     --specialize_directory $(PATH_TO_COPROCESSOR_KERNELS))
 
@@ -584,7 +584,7 @@ endif
 
 # Specialize for debug_log. micro_time etc.
 PATH_TO_TARGET_SRCS := $(TENSORFLOW_ROOT)tensorflow/lite/micro/$(TARGET)
-MICROLITE_CC_SRCS := $(shell python3 $(MAKEFILE_DIR)/specialize_files.py \
+MICROLITE_CC_SRCS := $(shell /cygdrive/c/git/tflite-micro/tflite_env/Scripts/python.exe $(MAKEFILE_DIR)/specialize_files.py \
   --base_files "$(MICROLITE_CC_SRCS)" \
   --specialize_directory $(PATH_TO_TARGET_SRCS))
 
