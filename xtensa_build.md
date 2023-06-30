@@ -52,7 +52,7 @@
     ```
     $ "C:/usr/xtensa/XtDevTools/install/tools/RI-2021.8-win32/XtensaTools/bin/xt-gdb.exe" --xtensa-system=C:/usr/xtensa/XtDevTools/install/builds/RI-2021.8-win32/adau1797_2021_8/config --xtensa-core=adau1797_2021_8 gen/xtensa_hifi3_default/bin/micro_speech
     ```
-4. After Xtensa GDB is launched, in the Xtensa GDB terminal run the following commands sequentially:
+4. After Xtensa GDB is launched, in the Xtensa GDB terminal run the following commands sequentially:  
     a. `target remote localhost:20000`  
     b. `reset`  
     c. `load`  
