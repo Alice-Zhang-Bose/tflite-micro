@@ -12,7 +12,7 @@
     $ pip install -r third_party/python_requirements.txt
     ```
 5. Some (~3) packages fail the install from the `requirements.txt` file. In those cases, I removed the hash from the `requirements.txt` and tried running `pip install -r third_party/python_requirements.txt` again or manually installed those packages with `pip install <package>`.
-6. Export environment variables in `.tflmrc'. TODO: this file currently assumes the root directory of this repo lives at `/c/git/`.
+6. Export environment variables in `.tflmrc`. TODO: this file currently assumes the root directory of this repo lives at `/c/git/`.
    ```
    source .tflmrc
    ```
@@ -47,15 +47,15 @@
     ```
     $ "C:/Program Files (x86)/Tensilica/Xtensa OCD Daemon 14.08/xt-ocd" --config=C:/Users/az1058168/Desktop/topology_no_security.xml
     ```
-    Note: Check that the topology file has the USB serial number that matches the serial number written on the physical Jlink device.
+    Note: Check that the topology file has the USB serial number that matches the serial number written on the physical Jlink device.  
     b. In another cygwin terminal, launch Xtensa GDB:
     ```
     $ "C:/usr/xtensa/XtDevTools/install/tools/RI-2021.8-win32/XtensaTools/bin/xt-gdb.exe" --xtensa-system=C:/usr/xtensa/XtDevTools/install/builds/RI-2021.8-win32/adau1797_2021_8/config --xtensa-core=adau1797_2021_8 gen/xtensa_hifi3_default/bin/micro_speech
     ```
 4. After Xtensa GDB is launched, in the Xtensa GDB terminal run the following commands sequentially:
-    a. `target remote localhost:20000`
-    b. `reset`
-    c. `load`
+    a. `target remote localhost:20000`  
+    b. `reset`  
+    c. `load`  
     After running load, the debugger should print something like the following: (TODO: verify that this is actually loading something meaningful onto the board)
     ```
     (xt-gdb) load
@@ -82,7 +82,7 @@
     Start address 0x00060000, load size 127720
     Transfer rate: 86 KB/sec, 4730 bytes/write.
     ```
-    To end the debugging session, run:
-    d. detach
-    e. quit
+    To end the debugging session, run:  
+    d. `detach`  
+    e. `quit`  
 
