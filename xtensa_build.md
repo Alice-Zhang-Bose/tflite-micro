@@ -45,7 +45,7 @@
 3. Load the program onto the board.  
     a. In one cygwin terminal, launch Xtensa OCD:
     ```
-    $ "C:/Program Files (x86)/Tensilica/Xtensa OCD Daemon 14.08/xt-ocd" --config=C:/Users/az1058168/Desktop/topology_no_security.xml
+    $ "C:/Program Files (x86)/Tensilica/Xtensa OCD Daemon 14.08/xt-ocd" --config=C:/Users/az1058168/Desktop/topology_no_security.xml -dTD=30 -T 20
     ```
     Note: Check that the topology file has the USB serial number that matches the serial number written on the physical Jlink device.  
     b. In another cygwin terminal, launch Xtensa GDB:
