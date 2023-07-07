@@ -13,11 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/examples/micro_speech/recognize_commands.h"
+#include "recognize_commands.h"
 
 #include <limits>
 
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../micro_log.h"
 
 RecognizeCommands::RecognizeCommands(int32_t average_window_duration_ms,
                                      uint8_t detection_threshold,

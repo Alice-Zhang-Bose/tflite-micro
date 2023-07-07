@@ -13,14 +13,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/micro_context.h"
+#include "micro_context.h"
 
 #include <cstdarg>
 #include <cstddef>
 #include <cstdint>
 
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../kernels/internal/compatibility.h"
+#include "micro_log.h"
 
 namespace tflite {
 MicroContext::MicroContext(MicroAllocator* allocator, const Model* model,

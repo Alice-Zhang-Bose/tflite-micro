@@ -16,8 +16,8 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_FAKE_MICRO_CONTEXT_H_
 #define TENSORFLOW_LITE_MICRO_FAKE_MICRO_CONTEXT_H_
 
-#include "tensorflow/lite/micro/micro_context.h"
-#include "tensorflow/lite/micro/micro_graph.h"
+#include "micro_context.h"
+#include "micro_graph.h"
 
 namespace tflite {
 // A fake of MicroContext for kernel util tests.

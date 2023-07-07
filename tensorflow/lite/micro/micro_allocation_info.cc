@@ -13,16 +13,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/micro_allocation_info.h"
+#include "micro_allocation_info.h"
 
 #include <algorithm>
 
-#include "tensorflow/lite/c/c_api_types.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/memory_helpers.h"
-#include "tensorflow/lite/micro/memory_planner/greedy_memory_planner.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../c/c_api_types.h"
+#include "../kernels/internal/compatibility.h"
+#include "../kernels/kernel_util.h"
+#include "memory_helpers.h"
+#include "memory_planner/greedy_memory_planner.h"
+#include "micro_log.h"
 
 namespace tflite {
 

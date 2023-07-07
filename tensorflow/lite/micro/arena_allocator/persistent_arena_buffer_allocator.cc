@@ -12,10 +12,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/arena_allocator/persistent_arena_buffer_allocator.h"
+#include "persistent_arena_buffer_allocator.h"
 
-#include "tensorflow/lite/micro/memory_helpers.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../memory_helpers.h"
+#include "../micro_log.h"
 
 namespace tflite {
 

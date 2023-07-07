@@ -13,16 +13,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/micro_graph.h"
+#include "micro_graph.h"
 
 #include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/micro/flatbuffer_utils.h"
-#include "tensorflow/lite/micro/memory_helpers.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_profiler.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../c/common.h"
+#include "../kernels/internal/compatibility.h"
+#include "flatbuffer_utils.h"
+#include "memory_helpers.h"
+#include "micro_log.h"
+#include "micro_profiler.h"
+#include "../schema/schema_generated.h"
 
 namespace tflite {
 namespace {

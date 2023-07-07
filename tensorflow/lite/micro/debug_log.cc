@@ -34,7 +34,7 @@ limitations under the License.
 // tensorflow/lite/micro/bluepill/debug_log.cc or the mbed one on
 // tensorflow/lite/micro/mbed/debug_log.cc.
 
-#include "tensorflow/lite/micro/debug_log.h"
+#include "debug_log.h"
 
 #ifndef TF_LITE_STRIP_ERROR_STRINGS
 #include <cstdio>

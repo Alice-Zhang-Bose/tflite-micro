@@ -13,16 +13,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/memory_helpers.h"
+#include "memory_helpers.h"
 
 #include <cstddef>
 #include <cstdint>
 
 #include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../c/common.h"
+#include "../kernels/internal/tensor_ctypes.h"
+#include "tflite_bridge/flatbuffer_conversions_bridge.h"
+#include "../schema/schema_generated.h"
 
 namespace tflite {
 

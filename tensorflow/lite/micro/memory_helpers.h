@@ -18,8 +18,8 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../c/common.h"
+#include "../schema/schema_generated.h"
 
 namespace tflite {
 

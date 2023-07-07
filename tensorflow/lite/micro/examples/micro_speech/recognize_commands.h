@@ -16,11 +16,12 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_RECOGNIZE_COMMANDS_H_
 #define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_RECOGNIZE_COMMANDS_H_
 
-#include <cstdint>
+//#include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/micro_model_settings.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../c/common.h"
+#include "stdint.h"
+#include "micro_features/micro_model_settings.h"
+#include "../../micro_log.h"
 
 // Partial implementation of std::dequeue, just providing the functionality
 // that's needed to keep a record of previous neural network results over a

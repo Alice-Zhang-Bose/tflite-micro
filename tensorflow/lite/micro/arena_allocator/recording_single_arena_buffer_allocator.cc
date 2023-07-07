@@ -13,11 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/arena_allocator/recording_single_arena_buffer_allocator.h"
+#include "recording_single_arena_buffer_allocator.h"
 
 #include <new>
 
-#include "tensorflow/lite/kernels/internal/compatibility.h"
+#include "../../kernels/internal/compatibility.h"
 
 namespace tflite {
 

@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/flatbuffer_utils.h"
+#include "flatbuffer_utils.h"
 
 namespace tflite {
 

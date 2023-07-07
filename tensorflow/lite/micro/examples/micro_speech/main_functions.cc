@@ -13,19 +13,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/examples/micro_speech/main_functions.h"
+#include "main_functions.h"
 
-#include "tensorflow/lite/micro/examples/micro_speech/audio_provider.h"
-#include "tensorflow/lite/micro/examples/micro_speech/command_responder.h"
-#include "tensorflow/lite/micro/examples/micro_speech/feature_provider.h"
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/micro_model_settings.h"
-#include "tensorflow/lite/micro/examples/micro_speech/micro_speech_model_data.h"
-#include "tensorflow/lite/micro/examples/micro_speech/recognize_commands.h"
-#include "tensorflow/lite/micro/micro_interpreter.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
-#include "tensorflow/lite/micro/system_setup.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "audio_provider.h"
+#include "command_responder.h"
+#include "feature_provider.h"
+#include "micro_features/micro_model_settings.h"
+#include "simple_features/model.h"
+#include "recognize_commands.h"
+#include "../../micro_interpreter.h"
+#include "../../micro_log.h"
+#include "../../micro_mutable_op_resolver.h"
+#include "../../system_setup.h"
+#include "../../../schema/schema_generated.h"
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
