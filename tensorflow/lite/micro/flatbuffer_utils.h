@@ -18,7 +18,7 @@ limitations under the License.
 
 #include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"
 #include "tools/make/downloads/flatbuffers/include/flatbuffers/flexbuffers.h"
-#include "../c/common.h"
+#include "../core/c/common.h"
 #include "../schema/schema_generated.h"
 
 namespace tflite {

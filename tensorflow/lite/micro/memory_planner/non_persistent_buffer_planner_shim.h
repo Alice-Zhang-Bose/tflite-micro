@@ -16,9 +16,9 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MEMORY_PLANNER_NON_PERSISTENT_MEMORY_PLANNER_SHIM_H__
 #define TENSORFLOW_LITE_MICRO_MEMORY_PLANNER_NON_PERSISTENT_MEMORY_PLANNER_SHIM_H__
 
-#include "tensorflow/lite/micro/compatibility.h"
-#include "tensorflow/lite/micro/memory_planner/memory_plan_struct.h"
-#include "tensorflow/lite/micro/memory_planner/micro_memory_planner.h"
+#include "../compatibility.h"
+#include "memory_plan_struct.h"
+#include "micro_memory_planner.h"
 
 namespace tflite {
 

@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/micro_arena_constants.h"
-#include "tensorflow/lite/micro/micro_interpreter.h"
-#include "tensorflow/lite/micro/mock_micro_graph.h"
-#include "tensorflow/lite/micro/test_helper_custom_ops.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "kernel_runner.h"
+#include "../micro_arena_constants.h"
+#include "../micro_interpreter.h"
+#include "../mock_micro_graph.h"
+#include "../test_helper_custom_ops.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 TF_LITE_MICRO_TESTS_BEGIN
 

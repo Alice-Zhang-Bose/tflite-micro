@@ -13,10 +13,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/memory_planner/greedy_memory_planner.h"
+#include "greedy_memory_planner.h"
 
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_string.h"
+#include "../micro_log.h"
+#include "../micro_string.h"
 
 namespace tflite {
 

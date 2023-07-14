@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/kernels/micro_tensor_utils.h"
+#include "micro_tensor_utils.h"
 
 #include <algorithm>
 #include <cmath>
@@ -21,11 +21,11 @@ limitations under the License.
 #include <limits>
 #include <utility>
 
-#include "fixedpoint/fixedpoint.h"  // from @gemmlowp
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/op_macros.h"
+#include "../tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"  // from @gemmlowp
+#include "../../kernels/internal/common.h"
+#include "../../kernels/internal/compatibility.h"
+#include "../../kernels/internal/cppmath.h"
+#include "../../kernels/op_macros.h"
 
 namespace tflite {
 

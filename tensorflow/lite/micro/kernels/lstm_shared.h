@@ -15,8 +15,8 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_KERNELS_LSTM_SHARED_H_
 #define TENSORFLOW_LITE_MICRO_KERNELS_LSTM_SHARED_H_
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../kernels/internal/types.h"
 
 namespace tflite {
 
@@ -103,7 +103,7 @@ struct CellStateInfo {
 // Contains required computation information for LSTM kernel evaluation.
 // Specifically, it includes shape and quantization settings for the LSTM
 // internal operations. Formatted to support operations defined in the
-// tensorflow/lite/kernels/internal/reference/integer_ops
+// ../../kernels/internal/reference/integer_ops
 // Should be constructed during the preparation phase
 struct OpDataLSTM {
   LstmSizeInfo size_info;

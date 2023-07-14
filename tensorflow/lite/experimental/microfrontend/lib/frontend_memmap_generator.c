@@ -14,9 +14,9 @@ limitations under the License.
 ==============================================================================*/
 #include <stdio.h>
 
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend_io.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend_util.h"
+#include "frontend.h"
+#include "frontend_io.h"
+#include "frontend_util.h"
 
 int main(int argc, char** argv) {
   if (argc != 3) {

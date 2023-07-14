@@ -19,11 +19,11 @@ limitations under the License.
 #include <limits>
 #include <utility>
 
-#include "fixedpoint/fixedpoint.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/reference/portable_tensor_utils_impl.h"
+#include "../../../micro/tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"
+#include "../common.h"
+#include "../compatibility.h"
+#include "../cppmath.h"
+#include "../reference/portable_tensor_utils_impl.h"
 
 #if defined(_MSC_VER)
 #define __restrict__ __restrict
@@ -166,6 +166,8 @@ void PortableMatrixBatchVectorMultiplyAccumulate(
     int n_batch, float* __restrict__ result, const float* per_channel_scale,
     const int32_t* input_offset, int32_t* scratch, int32_t* row_sums,
     bool* compute_row_sums, CpuBackendContext* context) {
+  (void)scratch[0];
+  (void)context;
   if (input_offset == nullptr) {
     PortableMatrixBatchVectorMultiplyAccumulate(
         matrix, m_rows, m_cols, vectors, scaling_factors, n_batch, result);
@@ -359,6 +361,8 @@ void PortableMatrixBatchVectorMultiplyAccumulate(
     const int8_t* input_to_gate_weights, int32_t multiplier, int32_t shift,
     int32_t n_batch, int32_t n_input, int32_t n_output, int32_t output_zp,
     int32_t* scratch, int16_t* output, CpuBackendContext* context) {
+  (void)scratch[0];
+  (void)context;
   PortableMatrixBatchVectorMultiplyAccumulateImpl(
       input, bias, input_to_gate_weights, multiplier, shift, n_batch, n_input,
       n_output, output_zp, output);
@@ -369,6 +373,8 @@ void PortableMatrixBatchVectorMultiplyAccumulate(
     const int8_t* input_to_gate_weights, int32_t multiplier, int32_t shift,
     int32_t n_batch, int32_t n_input, int32_t n_output, int32_t output_zp,
     int32_t* scratch, int8_t* output, CpuBackendContext* context) {
+  (void)scratch[0];
+  (void)context;
   PortableMatrixBatchVectorMultiplyAccumulateImpl(
       input, bias, input_to_gate_weights, multiplier, shift, n_batch, n_input,
       n_output, output_zp, output);

@@ -17,7 +17,7 @@ limitations under the License.
 
 #include <algorithm>
 
-#include "../c/c_api_types.h"
+#include "../core/c/c_api_types.h"
 #include "../kernels/internal/compatibility.h"
 #include "../kernels/kernel_util.h"
 #include "memory_helpers.h"

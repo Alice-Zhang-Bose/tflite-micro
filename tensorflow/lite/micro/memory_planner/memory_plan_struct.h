@@ -19,7 +19,7 @@ limitations under the License.
 #include <stddef.h>
 #include <stdint.h>
 
-#include "tensorflow/lite/micro/micro_utils.h"
+#include "micro_utils.h"
 
 namespace tflite {
 

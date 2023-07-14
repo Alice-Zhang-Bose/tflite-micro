@@ -18,7 +18,7 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "../c/common.h"
+#include "../core/c/common.h"
 #include "../schema/schema_generated.h"
 
 namespace tflite {

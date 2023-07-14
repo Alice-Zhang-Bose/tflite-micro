@@ -13,12 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
+#include "kernel_runner.h"
 
-#include "tensorflow/lite/micro/arena_allocator/single_arena_buffer_allocator.h"
-#include "tensorflow/lite/micro/micro_arena_constants.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/test_helpers.h"
+#include "../arena_allocator/single_arena_buffer_allocator.h"
+#include "../micro_arena_constants.h"
+#include "../micro_log.h"
+#include "../test_helpers.h"
 
 namespace tflite {
 namespace micro {

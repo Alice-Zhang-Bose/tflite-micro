@@ -14,15 +14,15 @@ limitations under the License.
 ==============================================================================*/
 
 #include "flatbuffers/flexbuffers.h"
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "kernel_runner.h"
+#include "../micro_mutable_op_resolver.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
-// See: tensorflow/lite/micro/kernels/detection_postprocess_test/README.md
-#include "tensorflow/lite/micro/kernels/detection_postprocess_flexbuffers_generated_data.h"
+// See: detection_postprocess_test/README.md
+#include "detection_postprocess_flexbuffers_generated_data.h"
 
 namespace tflite {
 namespace testing {

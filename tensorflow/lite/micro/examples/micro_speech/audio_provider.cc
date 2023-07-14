@@ -14,6 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 #include "audio_provider.h"
+#include " ../../micro_log.h"
 
 #include "micro_features/micro_model_settings.h"
 
@@ -27,6 +28,7 @@ TfLiteStatus GetAudioSamples(int start_ms, int duration_ms,
   for (int i = 0; i < kMaxAudioSampleSize; ++i) {
     g_dummy_audio_data[i] = 0;
   }
+  MicroPrintf("start ms: %d duration ms: %d", start_ms, duration_ms);
   *audio_samples_size = kMaxAudioSampleSize;
   *audio_samples = g_dummy_audio_data;
   return kTfLiteOk;

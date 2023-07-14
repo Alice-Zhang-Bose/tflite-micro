@@ -14,7 +14,7 @@ limitations under the License.
 ==============================================================================*/
 
 // This file and the associated .cc file is branched from
-// tensorflow/lite/kernels/internal/reference/portable_tensor_utils*
+// ../../kernels/internal/reference/portable_tensor_utils*
 // TFLM needs to create its own because the original files are coupled with
 // the tensor_utils module, which we cannot reuse due to its use of the
 // Eigen library.
@@ -26,9 +26,9 @@ limitations under the License.
 #include <cmath>
 #include <cstdint>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/portable_tensor_utils.h"
 
 #if defined(_MSC_VER)
 #define __restrict__ __restrict

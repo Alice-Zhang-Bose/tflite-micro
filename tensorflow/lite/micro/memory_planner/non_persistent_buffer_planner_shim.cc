@@ -13,9 +13,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/memory_planner/non_persistent_buffer_planner_shim.h"
+#include "non_persistent_buffer_planner_shim.h"
 
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../micro_log.h"
 
 namespace tflite {
 

@@ -13,11 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/debug_log.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/common.h"
+#include "../debug_log.h"
+#include "kernel_runner.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace testing {

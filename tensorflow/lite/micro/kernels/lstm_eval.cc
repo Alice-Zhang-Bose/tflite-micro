@@ -12,19 +12,19 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/kernels/lstm_eval.h"
+#include "lstm_eval.h"
 
 #include <limits>
 
-#include "tensorflow/lite/kernels/internal/reference/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/logistic.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/mul.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/tanh.h"
-#include "tensorflow/lite/kernels/internal/reference/logistic.h"
-#include "tensorflow/lite/kernels/internal/reference/mul.h"
-#include "tensorflow/lite/kernels/internal/reference/tanh.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../kernels/internal/reference/fully_connected.h"
+#include "../../kernels/internal/reference/integer_ops/fully_connected.h"
+#include "../../kernels/internal/reference/integer_ops/logistic.h"
+#include "../../kernels/internal/reference/integer_ops/mul.h"
+#include "../../kernels/internal/reference/integer_ops/tanh.h"
+#include "../../kernels/internal/reference/logistic.h"
+#include "../../kernels/internal/reference/mul.h"
+#include "../../kernels/internal/reference/tanh.h"
+#include "../../kernels/internal/types.h"
 
 namespace tflite {
 

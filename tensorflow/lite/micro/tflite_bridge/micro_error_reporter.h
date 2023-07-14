@@ -17,8 +17,8 @@ limitations under the License.
 
 #include <cstdarg>
 
-#include "tensorflow/lite/core/api/error_reporter.h"
-#include "tensorflow/lite/micro/compatibility.h"
+#include "../../core/api/error_reporter.h"
+#include "../compatibility.h"
 
 namespace tflite {
 // Get a pointer to a singleton global error reporter.

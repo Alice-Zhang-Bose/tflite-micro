@@ -12,13 +12,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.h"
+#include "flatbuffer_conversions_bridge.h"
 
-#include "tensorflow/lite/c/c_api_types.h"
-#include "tensorflow/lite/core/api/error_reporter.h"
-#include "tensorflow/lite/core/api/flatbuffer_conversions.h"
-#include "tensorflow/lite/micro/tflite_bridge/micro_error_reporter.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "../../core/c/c_api_types.h"
+#include "../../core/api/error_reporter.h"
+#include "../../core/api/flatbuffer_conversions.h"
+#include "micro_error_reporter.h"
+#include "../../schema/schema_generated.h"
 
 namespace tflite {
 TfLiteStatus ConvertTensorType(TensorType tensor_type, TfLiteType* type) {

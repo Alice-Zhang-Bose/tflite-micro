@@ -13,11 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/micro_op_resolver.h"
+#include "micro_op_resolver.h"
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/schema/schema_utils.h"
+#include "../core/c/common.h"
+#include "micro_log.h"
+#include "../schema/schema_utils.h"
 
 namespace tflite {
 

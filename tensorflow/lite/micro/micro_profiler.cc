@@ -12,15 +12,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/micro_profiler.h"
+#include "micro_profiler.h"
 
 #include <cinttypes>
 #include <cstdint>
 #include <cstring>
 
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_time.h"
+#include "../kernels/internal/compatibility.h"
+#include "micro_log.h"
+#include "micro_time.h"
 
 namespace tflite {
 

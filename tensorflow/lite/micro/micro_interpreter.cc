@@ -18,9 +18,9 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "../c/c_api_types.h"
-#include "../c/common.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/c_api_types.h"
+#include "../core/c/common.h"
 #include "flatbuffer_utils.h"
 #include "memory_helpers.h"
 #include "micro_allocator.h"

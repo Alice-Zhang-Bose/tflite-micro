@@ -96,6 +96,8 @@ TfLiteStatus EvalQuantizedInt8(TfLiteContext* context, TfLiteNode* node,
 
 void* HexagonFullyConnectedInit(TfLiteContext* context, const char* buffer,
                                 size_t length) {
+  (void)buffer;
+  (void)length;
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   void* data = nullptr;
   data = context->AllocatePersistentBuffer(context,

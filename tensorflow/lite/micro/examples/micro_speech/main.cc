@@ -20,6 +20,8 @@ limitations under the License.
 // requirements for entry code (like an app_main function) should specialize
 // this main.cc file in a target-specific subfolder.
 int main(int argc, char* argv[]) {
+  (void)argv[0];
+  (void)argc;
   setup();
   while (true) {
     loop();

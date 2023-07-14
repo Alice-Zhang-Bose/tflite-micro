@@ -12,17 +12,17 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/kernels/internal/reference/concatenation.h"
+#include "../../kernels/internal/reference/concatenation.h"
 
 #include <cstdint>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/internal/types.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
 
 namespace tflite {
 
@@ -105,6 +105,8 @@ void EvalUnquantized(TfLiteContext* context, TfLiteNode* node) {
 
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context, sizeof(OpData));
 }
 

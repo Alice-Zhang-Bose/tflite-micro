@@ -17,9 +17,9 @@ limitations under the License.
 
 #include <algorithm>
 
-#include "fixedpoint/fixedpoint.h"
-#include "ruy/profiler/instrumentation.h"  // from @ruy
-#include "tensorflow/lite/kernels/internal/common.h"
+#include "../../../../micro/tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"
+#include "../../../../micro/tools/make/downloads/ruy/ruy/profiler/instrumentation.h"  // from @ruy
+#include "../../common.h"
 
 namespace tflite {
 namespace reference_integer_ops {

@@ -12,16 +12,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/kernels/lstm_shared.h"
-#include "tensorflow/lite/micro/kernels/micro_ops.h"
-#include "tensorflow/lite/micro/kernels/testdata/lstm_test_data.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/portable_tensor_utils.h"
+#include "../../kernels/internal/types.h"
+#include "kernel_runner.h"
+#include "lstm_shared.h"
+#include "micro_ops.h"
+#include "testdata/lstm_test_data.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace testing {

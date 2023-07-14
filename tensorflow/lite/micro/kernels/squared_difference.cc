@@ -12,14 +12,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/binary_function.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/add.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_context.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/reference/binary_function.h"
+#include "../../kernels/internal/reference/integer_ops/add.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "../micro_context.h"
+#include "../micro_log.h"
 
 namespace tflite {
 namespace {
@@ -41,6 +41,8 @@ T SquaredDifference(T input1, T input2) {
 void* SquaredDifferenceInit(TfLiteContext* context, const char* buffer,
                             size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context, sizeof(OpData));
 }
 

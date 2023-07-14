@@ -15,9 +15,9 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_KERNELS_INTERNAL_REFERENCE_COMPARISONS_H_
 #define TENSORFLOW_LITE_KERNELS_INTERNAL_REFERENCE_COMPARISONS_H_
 
-#include "tensorflow/lite/core/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../../core/c/common.h"
+#include "../common.h"
+#include "../types.h"
 
 namespace tflite {
 
@@ -63,6 +63,7 @@ inline void ComparisonImpl(
   for (int64_t i = 0; i < flatsize; ++i) {
     output_data[i] = F(input1_data[i], input2_data[i]);
   }
+  (void)op_params;
 }
 
 template <ComparisonFn<float> F>
@@ -140,6 +141,7 @@ inline void BroadcastComparison4DSlowImpl(
       }
     }
   }
+  (void)op_params;
 }
 
 template <ComparisonFn<float> F>

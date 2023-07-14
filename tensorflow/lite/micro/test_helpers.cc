@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/test_helpers.h"
+#include "test_helpers.h"
 
 #include <cstdarg>
 #include <cstddef>
@@ -21,17 +21,17 @@ limitations under the License.
 #include <initializer_list>
 #include <new>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/memory_helpers.h"
-#include "tensorflow/lite/micro/micro_arena_constants.h"
-#include "tensorflow/lite/micro/micro_utils.h"
-#include "tensorflow/lite/micro/test_helper_custom_ops.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/common.h"
+#include "../kernels/internal/compatibility.h"
+#include "../kernels/internal/tensor_ctypes.h"
+#include "../kernels/kernel_util.h"
+#include "kernels/kernel_util.h"
+#include "memory_helpers.h"
+#include "micro_arena_constants.h"
+#include "micro_utils.h"
+#include "test_helper_custom_ops.h"
+#include "../schema/schema_generated.h"
 
 // TODO(b/170464050): Use TFLM test only version of schema_utils.
 
@@ -442,11 +442,11 @@ const Model* BuildModelWithUnusedOperatorOutputs() {
           *builder, builder->CreateVector(tensor_shape, tensor_shape_size),
           TensorType_INT8, 0,
           builder->CreateString("test_unused_output_tensor"), 0, false)};
-  constexpr size_t inputs_size = 0;
+  constexpr size_t inputs_size = 1;
   const int32_t inputs[inputs_size] = {};
   constexpr size_t outputs_size = 1;
   const int32_t outputs[outputs_size] = {0};
-  constexpr size_t operator_inputs_size = 0;
+  constexpr size_t operator_inputs_size = 1;
   const int32_t operator_inputs[operator_inputs_size] = {};
   constexpr size_t operator_outputs_size = 2;
   const int32_t operator_outputs[operator_outputs_size] = {0, 1};
@@ -1447,6 +1447,8 @@ void* SimpleStatefulOp::Init(TfLiteContext* context, const char* buffer,
   void* raw = context->AllocatePersistentBuffer(context, sizeof(OpData));
   OpData* data = reinterpret_cast<OpData*>(raw);
   *data = {};
+  (void)buffer;
+  (void)length;
   return raw;
 }
 
@@ -1536,6 +1538,8 @@ void* MockCustom::Init(TfLiteContext* context, const char* buffer,
   TFLITE_DCHECK(context->ReplaceNodeSubsetsWithDelegateKernels == nullptr);
   freed_ = false;
   // Do nothing.
+  (void)buffer;
+  (void)length;
   return nullptr;
 }
 
@@ -1584,6 +1588,8 @@ void* MultipleInputs::Init(TfLiteContext* context, const char* buffer,
   TFLITE_DCHECK(context->ReplaceNodeSubsetsWithDelegateKernels == nullptr);
   freed_ = false;
   // Do nothing.
+  (void)buffer;
+  (void)length;
   return nullptr;
 }
 
@@ -1638,6 +1644,8 @@ void* NoOp::Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->ReplaceNodeSubsetsWithDelegateKernels == nullptr);
   freed_ = false;
   // Do nothing.
+  (void)buffer;
+  (void)length;
   return nullptr;
 }
 

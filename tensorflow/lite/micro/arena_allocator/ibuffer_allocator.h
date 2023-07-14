@@ -18,7 +18,7 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "../../c/c_api_types.h"
+#include "../../core/c/c_api_types.h"
 
 namespace tflite {
 // Interface classes that the TFLM framework relies on to get buffers it needs.

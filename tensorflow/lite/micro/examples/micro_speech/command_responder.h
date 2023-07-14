@@ -18,7 +18,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_COMMAND_RESPONDER_H_
 #define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_COMMAND_RESPONDER_H_
 
-#include "../../../c/common.h"
+#include "../../../core/c/common.h"
 //#include "stdint.h"
 // Called every time the results of an audio recognition run are available. The
 // human-readable name of any recognized command is in the `found_command`

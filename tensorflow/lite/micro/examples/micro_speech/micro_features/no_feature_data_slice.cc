@@ -15,7 +15,7 @@ limitations under the License.
 
 // See the header for documentation on the meaning of this data.
 
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/no_feature_data_slice.h"
+#include "no_feature_data_slice.h"
 
 alignas(16) const int8_t
     g_no_feature_data_slice[g_no_feature_data_slice_size] = {

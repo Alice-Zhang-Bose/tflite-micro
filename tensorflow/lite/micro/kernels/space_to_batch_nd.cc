@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/kernels/internal/reference/space_to_batch_nd.h"
+#include "../../kernels/internal/reference/space_to_batch_nd.h"
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_utils.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/internal/types.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
+#include "../micro_utils.h"
 
 namespace tflite {
 
@@ -41,6 +41,8 @@ const int kInputOutputMaxDimensionNum = 4;
 
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context, sizeof(SpaceToBatchParams));
 }
 

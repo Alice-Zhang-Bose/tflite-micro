@@ -15,13 +15,13 @@ limitations under the License.
 #include <stddef.h>
 #include <stdint.h>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/reference/pooling.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/kernels/padding.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/reference/pooling.h"
+#include "../../kernels/internal/types.h"
+#include "../../kernels/kernel_util.h"
+#include "../../kernels/padding.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
 
 namespace tflite {
 namespace {

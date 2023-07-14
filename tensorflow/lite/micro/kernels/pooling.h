@@ -18,16 +18,16 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/pooling.h"
-#include "tensorflow/lite/kernels/internal/reference/pooling.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/kernels/padding.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/micro_ops.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/reference/integer_ops/pooling.h"
+#include "../../kernels/internal/reference/pooling.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "../../kernels/padding.h"
+#include "kernel_util.h"
+#include "micro_ops.h"
+#include "../micro_log.h"
 
 namespace tflite {
 
@@ -63,6 +63,8 @@ void AveragePoolingEvalQuantized(TfLiteContext* context, const TfLiteNode* node,
                                  const OpDataPooling* data,
                                  const TfLiteEvalTensor* input,
                                  TfLiteEvalTensor* output) {
+  (void)context;
+  (void)node;
   TFLITE_DCHECK(input->type == kTfLiteInt8 || input->type == kTfLiteInt16);
 
   PoolParams op_params;
@@ -93,6 +95,8 @@ void MaxPoolingEvalQuantized(TfLiteContext* context, TfLiteNode* node,
                              const OpDataPooling* data,
                              const TfLiteEvalTensor* input,
                              TfLiteEvalTensor* output) {
+  (void)context;
+  (void)node;
   TFLITE_DCHECK(input->type == kTfLiteInt8 || input->type == kTfLiteInt16);
 
   tflite::PoolParams op_params;

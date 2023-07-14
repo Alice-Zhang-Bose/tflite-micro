@@ -13,21 +13,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/fully_connected.h"
+#include "fully_connected.h"
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/reference/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/portable_tensor_utils.h"
+#include "../../kernels/internal/reference/fully_connected.h"
+#include "../../kernels/internal/reference/integer_ops/fully_connected.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
 
 namespace tflite {
 namespace {
 
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context,
                                            sizeof(OpDataFullyConnected));
 }

@@ -15,7 +15,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_EXPERIMENTAL_MICROFRONTEND_LIB_WINDOW_UTIL_H_
 #define TENSORFLOW_LITE_EXPERIMENTAL_MICROFRONTEND_LIB_WINDOW_UTIL_H_
 
-#include "tensorflow/lite/experimental/microfrontend/lib/window.h"
+#include "window.h"
 
 #ifdef __cplusplus
 extern "C" {

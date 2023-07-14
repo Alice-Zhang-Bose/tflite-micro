@@ -13,14 +13,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/kernels/internal/reference/cumsum.h"
+#include "../../kernels/internal/reference/cumsum.h"
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/types.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
 
 namespace tflite {
 namespace {

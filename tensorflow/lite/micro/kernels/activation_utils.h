@@ -19,10 +19,10 @@ limitations under the License.
 #include <algorithm>
 #include <cmath>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/max.h"
-#include "tensorflow/lite/kernels/internal/min.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../kernels/internal/cppmath.h"
+#include "../../kernels/internal/max.h"
+#include "../../kernels/internal/min.h"
 
 namespace tflite {
 namespace ops {

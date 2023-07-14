@@ -16,8 +16,8 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_PROFILER_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_PROFILER_H_
 
-#include "tensorflow/lite/micro/compatibility.h"
-#include "tensorflow/lite/micro/micro_profiler_interface.h"
+#include "compatibility.h"
+#include "micro_profiler_interface.h"
 
 namespace tflite {
 
@@ -87,7 +87,7 @@ class MicroProfiler : public MicroProfilerInterface {
 
   int FindExistingOrNextPosition(const char* tag_name);
 
-  TF_LITE_REMOVE_VIRTUAL_DELETE;
+  TF_LITE_REMOVE_VIRTUAL_DELETE
 };
 
 #if defined(TF_LITE_STRIP_ERROR_STRINGS)

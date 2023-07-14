@@ -24,7 +24,7 @@ limitations under the License.
 // you're targeting. For example, see the Cortex M bare metal version in
 // tensorflow/lite/micro/bluepill/micro_time.cc
 
-#include "tensorflow/lite/micro/micro_time.h"
+#include "micro_time.h"
 
 #if defined(TF_LITE_USE_CTIME)
 #include <ctime>

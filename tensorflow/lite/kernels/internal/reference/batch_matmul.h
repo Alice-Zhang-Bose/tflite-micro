@@ -18,10 +18,10 @@ limitations under the License.
 #include <algorithm>
 #include <cstdint>
 
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../common.h"
+#include "../compatibility.h"
+#include "../portable_tensor_utils.h"
+#include "../types.h"
 
 namespace tflite {
 namespace reference_ops {

@@ -17,11 +17,11 @@ limitations under the License.
 
 #include <cmath>
 
-#include "fixedpoint/fixedpoint.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/kernels/op_macros.h"
+#include "../../../micro/tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"
+#include "../common.h"
+#include "../cppmath.h"
+#include "../types.h"
+#include "../../op_macros.h"
 
 namespace tflite {
 namespace reference_ops {

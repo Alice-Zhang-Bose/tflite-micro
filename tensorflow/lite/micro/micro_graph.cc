@@ -15,8 +15,8 @@ limitations under the License.
 
 #include "micro_graph.h"
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "../c/common.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/common.h"
 #include "../kernels/internal/compatibility.h"
 #include "flatbuffer_utils.h"
 #include "memory_helpers.h"

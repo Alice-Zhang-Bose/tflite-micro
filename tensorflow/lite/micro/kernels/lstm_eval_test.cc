@@ -12,20 +12,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/kernels/lstm_eval_test.h"
+#include "lstm_eval_test.h"
 
 #include <cstdint>
 #include <cstdlib>
 #include <memory>
 #include <utility>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/kernels/lstm_eval.h"
-#include "tensorflow/lite/micro/kernels/lstm_shared.h"
-#include "tensorflow/lite/micro/kernels/testdata/lstm_test_data.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "lstm_eval.h"
+#include "lstm_shared.h"
+#include "testdata/lstm_test_data.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 // TODO(b/230666079) enable below tests for xtensa when the xtensa
 // kernel is reconciled with reference kernel

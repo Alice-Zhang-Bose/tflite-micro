@@ -13,12 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/core/api/op_resolver.h"
+#include "op_resolver.h"
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/core/api/error_reporter.h"
-#include "tensorflow/lite/core/c/common.h"
-#include "tensorflow/lite/schema/schema_utils.h"
+#include "../../micro/tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "error_reporter.h"
+#include "../c/common.h"
+#include "../../schema/schema_utils.h"
 
 namespace tflite {
 

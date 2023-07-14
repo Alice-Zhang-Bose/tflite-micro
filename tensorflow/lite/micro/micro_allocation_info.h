@@ -15,7 +15,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_ALLOCATION_INFO_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_ALLOCATION_INFO_H_
 
-#include "../c/common.h"
+#include "../core/c/common.h"
 #include "../micro/compatibility.h"
 #include "../micro/flatbuffer_utils.h"
 #include "../micro/micro_allocator.h"

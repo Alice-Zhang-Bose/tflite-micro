@@ -17,6 +17,7 @@ limitations under the License.
 #define TENSORFLOW_LITE_MICRO_EXAMPLES_MICRO_SPEECH_AUDIO_PROVIDER_H_
 
 #include "../../../c/common.h"
+#include "../../../core/c/c_api_types.h"
 #include "stdint.h"
 // This is an abstraction around an audio source like a microphone, and is
 // expected to return 16-bit PCM sample data for a given point in time. The

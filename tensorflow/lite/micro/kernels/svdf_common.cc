@@ -15,17 +15,17 @@ limitations under the License.
 
 #include <math.h>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/kernels/op_macros.h"
-#include "tensorflow/lite/micro/kernels/activation_utils.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/svdf.h"
-#include "tensorflow/lite/micro/micro_utils.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "../../kernels/op_macros.h"
+#include "activation_utils.h"
+#include "kernel_util.h"
+#include "svdf.h"
+#include "../micro_utils.h"
 
 namespace tflite {
 

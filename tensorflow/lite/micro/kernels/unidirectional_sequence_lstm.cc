@@ -20,12 +20,12 @@ limitations under the License.
 #include <algorithm>
 #include <limits>
 
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/fully_connected.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/lstm_eval.h"
-#include "tensorflow/lite/micro/kernels/lstm_shared.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/kernel_util.h"
+#include "fully_connected.h"
+#include "kernel_util.h"
+#include "lstm_eval.h"
+#include "lstm_shared.h"
 
 namespace tflite {
 
@@ -36,6 +36,8 @@ namespace {
 
 void* UnidirectionalSequenceLstmInit(TfLiteContext* context, const char* buffer,
                                      size_t length) {
+  (void)buffer;
+  (void)length;
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   return context->AllocatePersistentBuffer(context, sizeof(OpDataLSTM));
 }

@@ -24,12 +24,12 @@ limitations under the License.
 // functions used here, for example replacing the DFT with an FFT, so this
 // version shouldn't be used where performance is critical.
 
-#include "tensorflow/lite/micro/examples/micro_speech/simple_features/simple_features_generator.h"
+#include "simple_features_generator.h"
 
 #include <cmath>
 
-#include "tensorflow/lite/micro/examples/micro_speech/simple_features/simple_model_settings.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../micro_features/micro_model_settings.h"
+#include "../../micro_log.h"
 
 namespace {
 

@@ -16,7 +16,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_MEMORY_PLANNER_MEMORY_PLANNER_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_MEMORY_PLANNER_MEMORY_PLANNER_H_
 
-#include "tensorflow/lite/c/common.h"
+#include "../../core/c/common.h"
 
 namespace tflite {
 
@@ -61,6 +61,10 @@ class MicroMemoryPlanner {
   // By default, it returns an error.
   virtual TfLiteStatus AddBuffer(int size, int first_time_used,
                                  int last_time_used, int offline_offset) {
+    (void)size;
+    (void)first_time_used;
+    (void)last_time_used;
+    (void)offline_offset;                              
     return kTfLiteError;
   }
 
@@ -78,6 +82,8 @@ class MicroMemoryPlanner {
   // scratch buffer and simply returns ok.
   virtual TfLiteStatus Init(unsigned char* scratch_buffer,
                             int scratch_buffer_size) {
+    (void)scratch_buffer;
+    (void)scratch_buffer_size;
     return kTfLiteOk;
   }
 

@@ -13,9 +13,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
+#include "../../kernels/internal/quantization_util.h"
 
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace {

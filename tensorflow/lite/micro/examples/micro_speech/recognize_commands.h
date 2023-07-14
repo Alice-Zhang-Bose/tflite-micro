@@ -18,7 +18,7 @@ limitations under the License.
 
 //#include <cstdint>
 
-#include "../../../c/common.h"
+#include "../../../core/c/common.h"
 #include "stdint.h"
 #include "micro_features/micro_model_settings.h"
 #include "../../micro_log.h"

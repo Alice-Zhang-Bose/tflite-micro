@@ -45,6 +45,7 @@ TfLiteTensor* FakeMicroContext::AllocateTempTfLiteTensor(int tensor_index) {
 
 void FakeMicroContext::DeallocateTempTfLiteTensor(TfLiteTensor* tensor) {
   allocated_temp_count_--;
+  (void)tensor;
 }
 
 bool FakeMicroContext::IsAllTempTfLiteTensorDeallocated() {

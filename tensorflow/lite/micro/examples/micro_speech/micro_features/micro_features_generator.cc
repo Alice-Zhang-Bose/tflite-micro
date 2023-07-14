@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.h"
+#include "micro_features_generator.h"
 
 #include <cmath>
 #include <cstring>
 
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend_util.h"
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/micro_model_settings.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../experimental/microfrontend/lib/frontend.h"
+#include "../../../experimental/microfrontend/lib/frontend_util.h"
+#include "micro_model_settings.h"
+#include "../../micro_log.h"
 
 namespace {
 

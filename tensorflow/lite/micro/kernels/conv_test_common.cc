@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/conv_test.h"
+#include "conv_test.h"
 
 namespace tflite {
 namespace testing {

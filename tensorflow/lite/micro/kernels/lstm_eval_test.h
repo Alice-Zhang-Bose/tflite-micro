@@ -19,10 +19,10 @@ limitations under the License.
 #include <algorithm>
 #include <limits>
 
-#include "tensorflow/lite/micro/kernels/lstm_eval.h"
-#include "tensorflow/lite/micro/kernels/testdata/lstm_test_data.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "lstm_eval.h"
+#include "testdata/lstm_test_data.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace testing {
@@ -33,7 +33,7 @@ namespace testing {
 // weight tensors.
 // Since TfLiteContext is not available during the kernel test, here we mimic
 // (put into stack memory) CalculateOpDataFullyConnected in
-// tensorflow/lite/micro/kernels/fully_connected_common.cc
+// fully_connected_common.cc
 template <typename CellType>
 tflite::FullyConnectedParams CreateFCParams(
     const TensorQuantizationParameters& input_quant_params,

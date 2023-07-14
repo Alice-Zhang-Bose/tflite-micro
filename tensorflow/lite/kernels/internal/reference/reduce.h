@@ -17,13 +17,13 @@ limitations under the License.
 
 #include <algorithm>
 
-#include "ruy/profiler/instrumentation.h"  // from @ruy
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/max.h"
-#include "tensorflow/lite/kernels/internal/min.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../../micro/tools/make/downloads/ruy/ruy/profiler/instrumentation.h"  // from @ruy
+#include "../common.h"
+#include "../cppmath.h"
+#include "../max.h"
+#include "../min.h"
+#include "../quantization_util.h"
+#include "../types.h"
 
 // Check if the reduction at index is the first one along the dimensions given
 // in axis.

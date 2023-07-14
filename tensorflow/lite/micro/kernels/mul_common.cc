@@ -13,16 +13,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/mul.h"
-#include "tensorflow/lite/kernels/internal/reference/mul.h"
-#include "tensorflow/lite/kernels/internal/reference/process_broadcast_shapes.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/mul.h"
-#include "tensorflow/lite/micro/memory_helpers.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/reference/integer_ops/mul.h"
+#include "../../kernels/internal/reference/mul.h"
+#include "../../kernels/internal/reference/process_broadcast_shapes.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "mul.h"
+#include "../memory_helpers.h"
 
 namespace tflite {
 
@@ -32,6 +32,8 @@ const int kMulOutputTensor = 0;
 
 void* MulInit(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context, sizeof(OpDataMul));
 }
 

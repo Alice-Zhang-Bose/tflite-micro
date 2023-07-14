@@ -13,21 +13,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/kernels/internal/reference/prelu.h"
+#include "../../kernels/internal/reference/prelu.h"
 
 #include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/prelu.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "prelu.h"
+#include "../micro_log.h"
 
 namespace tflite {
 
 void* PreluInit(TfLiteContext* context, const char* buffer, size_t length) {
+  (void)buffer;
+  (void)length;
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   return context->AllocatePersistentBuffer(context, sizeof(PreluParams));
 }

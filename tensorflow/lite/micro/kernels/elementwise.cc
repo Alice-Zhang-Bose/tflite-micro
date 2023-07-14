@@ -15,14 +15,14 @@ limitations under the License.
 
 #include <cmath>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_utils.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "../micro_log.h"
+#include "../micro_utils.h"
 
 namespace tflite {
 namespace {
@@ -227,11 +227,14 @@ inline TfLiteStatus EvalLogical(TfLiteContext* context, TfLiteNode* node,
 void* ElementWiseAbsRsqrtInit(TfLiteContext* context, const char* buffer,
                               size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
+  (void)buffer;
+  (void)length;
   return context->AllocatePersistentBuffer(context, sizeof(OpDataAbsRsqrt));
 }
 
 template <typename T>
 inline T AbsEvalQuantized(TfLiteContext* context, TfLiteNode* node, T i) {
+  (void)context;
   const auto* op_data = static_cast<const OpDataAbsRsqrt*>(node->user_data);
   const int kMin = std::numeric_limits<T>::min();
   const int kMax = std::numeric_limits<T>::max();
@@ -254,6 +257,7 @@ inline T AbsEvalQuantized(TfLiteContext* context, TfLiteNode* node, T i) {
 
 template <typename T>
 inline T RsqrtEvalQuantized(TfLiteContext* context, TfLiteNode* node, T i) {
+  (void)context;
   const auto* op_data = static_cast<const OpDataAbsRsqrt*>(node->user_data);
   const int kMin = std::numeric_limits<T>::min();
   const int kMax = std::numeric_limits<T>::max();

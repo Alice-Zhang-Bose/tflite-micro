@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/conv_test.h"
+#include "conv_test.h"
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/kernels/testdata/conv_test_data.h"
-#include "tensorflow/lite/micro/micro_utils.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/builtin_op_data.h"
+#include "../../core/c/common.h"
+#include "kernel_runner.h"
+#include "testdata/conv_test_data.h"
+#include "../micro_utils.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace testing {

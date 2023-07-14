@@ -14,9 +14,9 @@ limitations under the License.
 ==============================================================================*/
 
 // This file is generated. See:
-// tflite-micro/tensorflow/lite/micro/kernels/test_data_generation/README.md
+// tflite-micro/test_data_generation/README.md
 
-#include "tensorflow/lite/micro/kernels/detection_postprocess_flexbuffers_generated_data.h"
+#include "detection_postprocess_flexbuffers_generated_data.h"
 
 const int g_gen_data_size_none_regular_nms = 242;
 alignas(4) const unsigned char g_gen_data_none_regular_nms[] = {

@@ -17,7 +17,7 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../types.h"
 
 namespace tflite {
 namespace reference_ops {

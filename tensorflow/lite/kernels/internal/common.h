@@ -25,11 +25,11 @@ limitations under the License.
 #include <cmath>
 #include <functional>
 
-#include "fixedpoint/fixedpoint.h"
-#include "tensorflow/lite/core/macros.h"
-#include "tensorflow/lite/kernels/internal/cppmath.h"
-#include "tensorflow/lite/kernels/internal/optimized/neon_check.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../micro/tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"
+#include "../../core/macros.h"
+#include "cppmath.h"
+#include "optimized/neon_check.h"
+#include "types.h"
 
 namespace tflite {
 
@@ -595,6 +595,7 @@ static const uint16_t sigmoid_table_uint16[256] = {
 // TODO(b/77858996): Add these to gemmlowp.
 template <typename IntegerType>
 IntegerType SaturatingAddNonGemmlowp(IntegerType a, IntegerType b) {
+  (void)b;
   static_assert(std::is_same<IntegerType, void>::value, "unimplemented");
   return a;
 }
@@ -621,6 +622,7 @@ gemmlowp::FixedPoint<tRawType, tIntegerBits> SaturatingAddNonGemmlowp(
 
 template <typename IntegerType>
 IntegerType SaturatingSub(IntegerType a, IntegerType b) {
+  (void)b;
   static_assert(std::is_same<IntegerType, void>::value, "unimplemented");
   return a;
 }

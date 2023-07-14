@@ -14,9 +14,9 @@ limitations under the License.
 ==============================================================================*/
 
 // This file is generated. See:
-// third_party/tensorflow/lite/micro/kernels/test_data_generation/README.md
+// third_party/test_data_generation/README.md
 
-#include "tensorflow/lite/micro/kernels/circular_buffer_flexbuffers_generated_data.h"
+#include "circular_buffer_flexbuffers_generated_data.h"
 
 const int g_gen_data_size_circular_buffer_config = 21;
 const unsigned char g_gen_data_circular_buffer_config[] = {

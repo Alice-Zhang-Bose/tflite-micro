@@ -16,8 +16,8 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_KERNELS_PRELU_H_
 #define TENSORFLOW_LITE_MICRO_KERNELS_PRELU_H_
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/types.h"
 
 namespace tflite {
 

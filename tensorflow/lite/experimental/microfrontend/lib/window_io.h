@@ -17,7 +17,7 @@ limitations under the License.
 
 #include <stdio.h>
 
-#include "tensorflow/lite/experimental/microfrontend/lib/window.h"
+#include "window.h"
 
 #ifdef __cplusplus
 extern "C" {

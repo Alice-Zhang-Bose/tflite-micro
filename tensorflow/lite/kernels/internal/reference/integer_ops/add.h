@@ -18,8 +18,8 @@ limitations under the License.
 #include <algorithm>
 #include <limits>
 
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/types.h"
+#include "../../common.h"
+#include "../../types.h"
 
 namespace tflite {
 namespace reference_integer_ops {
@@ -45,6 +45,7 @@ void ElementWise(int size, const ArithmeticParams& params, const T* input1_data,
   for (int i = 0; i < size; ++i) {
     output_data[i] = binary_func(input1_data[i], input2_data[i], params);
   }
+  (void)check_arithmetic_params;
 }
 // TODO(b/270589088): move to a more appropriate file. (b/270589088#comment2)
 template <typename T>
@@ -54,6 +55,7 @@ void BroadcastBinaryFunction6DSlow(
     const T* input2_data, const RuntimeShape& output_shape, T* output_data,
     void (*check_arithmetic_params)(const ArithmeticParams&),
     T (*binary_func)(T, T, const ArithmeticParams&)) {
+  (void)check_arithmetic_params;
   NdArrayDesc<6> desc1;
   NdArrayDesc<6> desc2;
   NdArrayDescsForElementwiseBroadcast(input1_shape, input2_shape, &desc1,

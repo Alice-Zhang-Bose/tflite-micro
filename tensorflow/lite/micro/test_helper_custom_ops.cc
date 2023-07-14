@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/test_helper_custom_ops.h"
+#include "test_helper_custom_ops.h"
 
 #include <cstdarg>
 #include <cstddef>
@@ -21,14 +21,14 @@ limitations under the License.
 #include <initializer_list>
 #include <new>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/micro_utils.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/common.h"
+#include "../kernels/internal/compatibility.h"
+#include "../kernels/internal/tensor_ctypes.h"
+#include "../kernels/kernel_util.h"
+#include "kernels/kernel_util.h"
+#include "micro_utils.h"
+#include "../schema/schema_generated.h"
 
 // TODO(b/170464050): Use TFLM test only version of schema_utils.
 
@@ -51,6 +51,9 @@ TFLMRegistration* PackerOp::GetMutableRegistration() {
 void* PackerOp::Init(TfLiteContext* context, const char* buffer,
                      size_t length) {
   freed_ = false;
+  (void)buffer;
+  (void)length;
+  (void)context;
   // Do nothing.
   return nullptr;
 }

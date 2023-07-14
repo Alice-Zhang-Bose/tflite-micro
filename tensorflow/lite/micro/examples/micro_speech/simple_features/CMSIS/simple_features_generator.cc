@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/examples/micro_speech/simple_features/simple_features_generator.h"
+#include "../simple_features_generator.h"
 
 #include "tensorflow/lite/micro/micro_log.h"
 

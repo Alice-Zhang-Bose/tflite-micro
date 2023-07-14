@@ -16,7 +16,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_CONTEXT_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_CONTEXT_H_
 
-#include "../c/common.h"
+#include "../core/c/common.h"
 #include "micro_allocator.h"
 #include "micro_graph.h"
 
@@ -174,6 +174,7 @@ inline TfLiteEvalTensor* MicroContextGetEvalTensor(
 }
 inline TfLiteExternalContext* MicroContextGetExternalContext(
     TfLiteContext* context, TfLiteExternalContextType unused) {
+  (void)unused;
   return reinterpret_cast<TfLiteExternalContext*>(
       GetMicroContext(context)->external_context());
 }

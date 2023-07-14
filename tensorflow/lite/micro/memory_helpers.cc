@@ -18,8 +18,8 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "../c/common.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/common.h"
 #include "../kernels/internal/tensor_ctypes.h"
 #include "tflite_bridge/flatbuffer_conversions_bridge.h"
 #include "../schema/schema_generated.h"

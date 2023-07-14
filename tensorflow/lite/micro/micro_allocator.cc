@@ -18,8 +18,8 @@ limitations under the License.
 #include <cstddef>
 #include <cstdint>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "../c/common.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../core/c/common.h"
 #include "../kernels/internal/compatibility.h"
 #include "arena_allocator/non_persistent_arena_buffer_allocator.h"
 #include "arena_allocator/persistent_arena_buffer_allocator.h"

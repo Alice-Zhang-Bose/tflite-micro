@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/micro_log.h"
+#include "micro_log.h"
 
 #include <cstdarg>
 #include <cstdint>
 #include <new>
 
 #if !defined(TF_LITE_STRIP_ERROR_STRINGS)
-#include "tensorflow/lite/micro/debug_log.h"
-#include "tensorflow/lite/micro/micro_string.h"
+#include "debug_log.h"
+#include "micro_string.h"
 #endif
 
 void Log(const char* format, va_list args) {

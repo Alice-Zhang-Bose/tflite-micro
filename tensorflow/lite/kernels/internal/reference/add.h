@@ -18,8 +18,8 @@ limitations under the License.
 #include <algorithm>
 #include <type_traits>
 
-#include "fixedpoint/fixedpoint.h"
-#include "tensorflow/lite/kernels/internal/common.h"
+#include "../../../micro/tools/make/downloads/gemmlowp/fixedpoint/fixedpoint.h"
+#include "../common.h"
 
 namespace tflite {
 
@@ -410,6 +410,9 @@ inline void BroadcastAddFivefold(const ArithmeticParams& unswitched_params,
                                  const uint8_t* unswitched_input2_data,
                                  const RuntimeShape& output_shape,
                                  uint8_t* output_data) {
+  (void)unswitched_input1_shape;
+  (void)unswitched_input2_shape;
+  (void)output_shape;
   ArithmeticParams switched_params = unswitched_params;
   switched_params.input1_offset = unswitched_params.input2_offset;
   switched_params.input1_multiplier = unswitched_params.input2_multiplier;

@@ -17,7 +17,7 @@ limitations under the License.
 
 #include <stdio.h>
 
-#include "tensorflow/lite/experimental/microfrontend/lib/filterbank.h"
+#include "filterbank.h"
 
 #ifdef __cplusplus
 extern "C" {

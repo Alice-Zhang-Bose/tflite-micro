@@ -13,9 +13,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/mock_micro_graph.h"
-
-#include "tensorflow/lite/micro/test_helpers.h"
+#include "mock_micro_graph.h"
+#include "test_helpers.h"
 
 namespace tflite {
 

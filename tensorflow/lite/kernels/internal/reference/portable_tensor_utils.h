@@ -15,7 +15,7 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_KERNELS_INTERNAL_REFERENCE_PORTABLE_TENSOR_UTILS_H_
 #define TENSORFLOW_LITE_KERNELS_INTERNAL_REFERENCE_PORTABLE_TENSOR_UTILS_H_
 
-#include "tensorflow/lite/kernels/internal/reference/portable_tensor_utils_impl.h"
+#include "portable_tensor_utils_impl.h"
 
 #if defined(_MSC_VER)
 #define __restrict__ __restrict
@@ -93,6 +93,8 @@ void MatrixBatchVectorMultiplyAccumulate(const int8_t* __restrict__ matrix,
                                          CpuBackendContext* context) {
   PortableMatrixBatchVectorMultiplyAccumulate(matrix, m_rows, m_cols, vector,
                                               scaling_factors, n_batch, result);
+  (void)scratch[0];
+  (void)context;
 }
 
 void SparseMatrixBatchVectorMultiplyAccumulate1x4(

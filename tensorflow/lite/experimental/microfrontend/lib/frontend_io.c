@@ -12,15 +12,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/experimental/microfrontend/lib/frontend_io.h"
+#include "frontend_io.h"
 
 #include <stdio.h>
 
-#include "tensorflow/lite/experimental/microfrontend/lib/fft_io.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/filterbank_io.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/log_scale_io.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/noise_reduction_io.h"
-#include "tensorflow/lite/experimental/microfrontend/lib/window_io.h"
+#include "fft_io.h"
+#include "filterbank_io.h"
+#include "log_scale_io.h"
+#include "noise_reduction_io.h"
+#include "window_io.h"
 
 int WriteFrontendStateMemmap(const char* header, const char* source,
                              const struct FrontendState* state) {

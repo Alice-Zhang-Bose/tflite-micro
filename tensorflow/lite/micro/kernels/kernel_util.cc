@@ -13,12 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
+#include "kernel_util.h"
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/micro/memory_helpers.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/portable_tensor_utils.h"
+#include "../memory_helpers.h"
+#include "../micro_log.h"
 
 namespace tflite {
 namespace micro {

@@ -19,13 +19,13 @@ limitations under the License.
 #include <cstdint>
 #include <limits>
 
-#include "flatbuffers/flatbuffers.h"  // from @flatbuffers
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/micro/micro_common.h"
-#include "tensorflow/lite/micro/micro_utils.h"
-#include "tensorflow/lite/portable_type_to_tflitetype.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "tools/make/downloads/flatbuffers/include/flatbuffers/flatbuffers.h"  // from @flatbuffers
+#include "../kernels/internal/compatibility.h"
+#include "../kernels/internal/tensor_ctypes.h"
+#include "micro_common.h"
+#include "micro_utils.h"
+#include "../portable_type_to_tflitetype.h"
+#include "../schema/schema_generated.h"
 
 namespace tflite {
 namespace testing {

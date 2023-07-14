@@ -15,16 +15,16 @@ limitations under the License.
 
 #include <limits>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/quantize.h"
-#include "tensorflow/lite/kernels/internal/reference/requantize.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/quantize.h"
-#include "tensorflow/lite/micro/micro_log.h"
-#include "tensorflow/lite/micro/micro_utils.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/quantization_util.h"
+#include "../../kernels/internal/reference/quantize.h"
+#include "../../kernels/internal/reference/requantize.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "quantize.h"
+#include "../micro_log.h"
+#include "../micro_utils.h"
 
 namespace tflite {
 

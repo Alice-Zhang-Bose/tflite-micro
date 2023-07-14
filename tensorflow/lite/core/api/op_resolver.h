@@ -19,9 +19,9 @@ limitations under the License.
 #include <memory>
 #include <vector>
 
-#include "tensorflow/lite/core/api/error_reporter.h"
-#include "tensorflow/lite/core/c/common.h"
-#include "tensorflow/lite/schema/schema_generated.h"
+#include "error_reporter.h"
+#include "../c/common.h"
+#include "../../schema/schema_generated.h"
 
 namespace tflite {
 
@@ -53,6 +53,7 @@ class OpResolver {
   // lookup for graph resolution.
   // WARNING: This API is deprecated, GetDelegateCreators is preferred.
   virtual TfLiteDelegatePtrVector GetDelegates(int num_threads) const {
+    (void)num_threads;
     return {};
   }
 

@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/system_setup.h"
+#include "system_setup.h"
 
 namespace tflite {
 

@@ -17,12 +17,12 @@ limitations under the License.
 
 #include <initializer_list>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/micro/kernels/kernel_runner.h"
-#include "tensorflow/lite/micro/micro_utils.h"
-#include "tensorflow/lite/micro/test_helpers.h"
-#include "tensorflow/lite/micro/testing/micro_test.h"
+#include "../../core/c/common.h"
+#include "../../kernels/internal/tensor_ctypes.h"
+#include "kernel_runner.h"
+#include "../micro_utils.h"
+#include "../test_helpers.h"
+#include "../testing/micro_test.h"
 
 namespace tflite {
 namespace testing {

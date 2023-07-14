@@ -16,15 +16,15 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_EXPERIMENTAL_MICROFRONTEND_LIB_KISS_FFT_INT16_H_
 #define TENSORFLOW_LITE_EXPERIMENTAL_MICROFRONTEND_LIB_KISS_FFT_INT16_H_
 
-#include "tensorflow/lite/experimental/microfrontend/lib/kiss_fft_common.h"
+#include "kiss_fft_common.h"
 
 // Wrap 16-bit kiss fft in its own namespace. Enables us to link an application
 // with different kiss fft resultions (16/32 bit interger, float, double)
 // without getting a linker error.
 #define FIXED_POINT 16
 namespace kissfft_fixed16 {
-#include "kiss_fft.h"
-#include "tools/kiss_fftr.h"
+#include "../../micro/tools/make/downloads/kissfft/kiss_fft.h"
+#include "../../micro/tools/make/downloads/kissfft/tools/kiss_fftr.h"
 }  // namespace kissfft_fixed16
 #undef FIXED_POINT
 #undef kiss_fft_scalar
