@@ -15,7 +15,26 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_MICRO_LOG_H_
 #define TENSORFLOW_LITE_MICRO_MICRO_LOG_H_
 
+#ifdef __cplusplus
+// Building with a C++ compiler
 #include <cstdarg>
+
+namespace tflite {
+
+// From
+// https://stackoverflow.com/questions/23235910/variadic-unused-function-macro
+template <typename... Args>
+void Unused(Args&&... args) {
+  (void)(sizeof...(args));
+}
+}  // namespace tflite
+
+extern "C" {
+#else
+// Building with a C compiler
+# include <stdarg.h>
+#endif
+
 
 // This is a free function used to perform the actual logging.
 // This function will be used by MicroPrintf and MicroErrorReporter::Report()
@@ -31,14 +50,8 @@ void MicroPrintf(const char* format, ...);
 #define MicroPrintf(...) tflite::Unused(__VA_ARGS__)
 #endif
 
-namespace tflite {
-
-// From
-// https://stackoverflow.com/questions/23235910/variadic-unused-function-macro
-template <typename... Args>
-void Unused(Args&&... args) {
-  (void)(sizeof...(args));
-}
-}  // namespace tflite
+#ifdef __cplusplus
+}  // Match extern "C"
+#endif
 
 #endif  // TENSORFLOW_LITE_MICRO_MICRO_LOG_H_
