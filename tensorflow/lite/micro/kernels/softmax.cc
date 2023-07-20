@@ -28,7 +28,7 @@ limitations under the License.
 
 namespace tflite {
 namespace {
-
+/*
 void SoftmaxQuantized(const TfLiteEvalTensor* input, TfLiteEvalTensor* output,
                       const SoftmaxParams& op_data) {
   if (input->type == kTfLiteInt8) {
@@ -81,10 +81,11 @@ TfLiteStatus SoftmaxEval(TfLiteContext* context, TfLiteNode* node) {
       return kTfLiteError;
   }
 }
+*/
 }  // namespace
-
+/*
 TFLMRegistration Register_SOFTMAX() {
   return tflite::micro::RegisterOp(SoftmaxInit, SoftmaxPrepare, SoftmaxEval);
 }
-
+*/
 }  // namespace tflite

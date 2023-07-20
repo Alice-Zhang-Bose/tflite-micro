@@ -19,15 +19,15 @@ limitations under the License.
 #include <cstddef>
 #include <vector>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/xtensa/lstm_eval.h"
-#include "tensorflow/lite/micro/kernels/xtensa/lstm_shared.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/compatibility.h"
+#include "../../../kernels/internal/quantization_util.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "lstm_eval.h"
+#include "lstm_shared.h"
+#include "../../micro_log.h"
 
 // TODO(b/230666079): Flatten the namespace to match the builtin kernel
 // implementation

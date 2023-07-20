@@ -13,15 +13,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/pooling.h"
+#include "../pooling.h"
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa_pooling.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "kernel_util.h"
+#include "xtensa.h"
+#include "xtensa_pooling.h"
+#include "../../micro_log.h"
 
 namespace tflite {
 
@@ -155,11 +155,11 @@ TFLMRegistration Register_MAX_POOL_2D() {
   return tflite::micro::RegisterOp(XtensaPoolingInit, PoolingPrepare, MaxEval);
 #endif
 }
-
+/*
 TFLMRegistration Register_AVERAGE_POOL_2D_INT16() {
   return Register_AVERAGE_POOL_2D();
 }
 
 TFLMRegistration Register_MAX_POOL_2D_INT16() { return Register_MAX_POOL_2D(); }
-
+*/
 }  // namespace tflite

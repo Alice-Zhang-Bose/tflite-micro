@@ -13,19 +13,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/fully_connected.h"
+#include "../fully_connected.h"
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa_fully_connected.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/common.h"
+#include "../../../kernels/internal/quantization_util.h"
+#include "../../../kernels/internal/reference/fully_connected.h"
+#include "../../../kernels/internal/reference/integer_ops/fully_connected.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "../kernel_util.h"
+#include "xtensa_fully_connected.h"
+#include "../../micro_log.h"
 
 namespace tflite {
 
@@ -68,6 +68,8 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
 
     case kTfLiteInt8: {
       switch (filter->type) {
+        // !! COMMENTING OUT DUE TO ERRORS !!
+        /*
         case kTfLiteInt8: {
           return XtensaEvalFullyConnectedQuantizedInt8(
               context, node, data, input, filter, bias, output);
@@ -76,6 +78,7 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
           return XtensaEvalFullyConnectedQuantizedInt8(
               context, node, data, input, filter, bias, output);
         }
+        */
         default: {
           MicroPrintf("Filter type %s (%d) not supported.",
                       TfLiteTypeGetName(filter->type), input->type);

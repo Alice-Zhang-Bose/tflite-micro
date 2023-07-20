@@ -13,17 +13,17 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa_fully_connected.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/common.h"
+#include "../../../kernels/internal/portable_tensor_utils.h"
+#include "../../../kernels/internal/quantization_util.h"
+#include "../../../kernels/internal/reference/integer_ops/fully_connected.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "../kernel_util.h"
+#include "xtensa.h"
+#include "xtensa_fully_connected.h"
 
 namespace tflite {
 
@@ -107,7 +107,7 @@ TfLiteStatus XtensaEvalFullyConnectedQuantizedInt8(
 
   return kTfLiteOk;
 }
-
+/*
 namespace {
 
 TfLiteStatus EvalInt8(TfLiteContext* context, TfLiteNode* node) {
@@ -135,5 +135,5 @@ TFLMRegistration Register_FULLY_CONNECTED_INT8() {
   return tflite::micro::RegisterOp(XtensaInitFullyConnected,
                                    XtensaPrepareFullyConnected, EvalInt8);
 }
-
+*/
 }  // namespace tflite

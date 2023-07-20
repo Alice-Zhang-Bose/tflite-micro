@@ -65,8 +65,8 @@ struct StridedSliceContext {
 
 // This Op only supports 1-4D cases and since we use the reference 4D
 // implementation, the 1-3D tensors are mapped to 4D.
-const int kMaxDim = 4;
-
+//const int kMaxDim = 4;
+/*
 tflite::StridedSliceParams BuildStridedSliceParams(
     StridedSliceContext* op_context) {
   tflite::StridedSliceParams op_params{};
@@ -87,10 +87,11 @@ tflite::StridedSliceParams BuildStridedSliceParams(
   op_params.shrink_axis_mask = op_context->params->shrink_axis_mask;
   return op_params;
 }
-
+*/
 // Processes the indexing tensors (begin, end and strides) to resize the
 // output tensor. This function is callable from both Prepare() and Eval() as
 // long as the caller ensures the indexing tensors are present.
+/*
 TfLiteStatus CheckOutputSize(TfLiteContext* context,
                              StridedSliceContext* op_context) {
   using ::tflite::strided_slice::StartForAxis;
@@ -125,7 +126,8 @@ TfLiteStatus CheckOutputSize(TfLiteContext* context,
   TF_LITE_ENSURE_EQ(context, output_shape->size, shape_size);
   return kTfLiteOk;
 }
-
+*/
+/*
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   (void)buffer;
   (void)length;
@@ -199,11 +201,11 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
   }
   return kTfLiteOk;
 }
-
+*/
 }  // namespace
-
+/*
 TFLMRegistration Register_STRIDED_SLICE() {
   return tflite::micro::RegisterOp(Init, Prepare, Eval);
 }
-
+*/
 }  // namespace tflite

@@ -13,22 +13,22 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/micro/kernels/svdf.h"
+#include "../svdf.h"
 
 #include <cmath>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/kernels/op_macros.h"
-#include "tensorflow/lite/micro/kernels/activation_utils.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa_svdf.h"
-#include "tensorflow/lite/micro/micro_log.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/common.h"
+#include "../../../kernels/internal/quantization_util.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "../../../kernels/op_macros.h"
+#include "../activation_utils.h"
+#include "../kernel_util.h"
+#include "xtensa.h"
+#include "xtensa_svdf.h"
+#include "../../micro_log.h"
 
 namespace tflite {
 namespace {
@@ -114,7 +114,7 @@ void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context != nullptr);
   return context->AllocatePersistentBuffer(context, sizeof(OpDataSvdf));
 }
-
+/*
 TfLiteStatus PrepareInt8(TfLiteContext* context, TfLiteNode* node) {
 #if defined(HIFIMINI) || defined(HIFI4) || defined(HIFI5)
   TFLITE_DCHECK(node->builtin_data != nullptr);
@@ -254,7 +254,7 @@ TfLiteStatus PrepareInt8(TfLiteContext* context, TfLiteNode* node) {
   return PrepareSvdf(context, node);
 #endif  // defined(HIFIMINI) || defined(HIFI4) || defined(HIFI5)
 }
-
+*/
 TfLiteStatus Prepare(TfLiteContext* context, TfLiteNode* node) {
 #if defined(HIFIMINI) || defined(HIFI4) || defined(HIFI5)
 
@@ -384,9 +384,9 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
 TFLMRegistration Register_SVDF() {
   return tflite::micro::RegisterOp(Init, Prepare, Eval);
 }
-
+/*
 TFLMRegistration Register_SVDF_INT8() {
   return tflite::micro::RegisterOp(Init, PrepareInt8, EvalInt8);
 }
-
+*/
 }  // namespace tflite

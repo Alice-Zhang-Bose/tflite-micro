@@ -26,7 +26,7 @@ limitations under the License.
 
 namespace tflite {
 namespace {
-
+/*
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   (void)buffer;
@@ -160,11 +160,11 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
   }
   return kTfLiteOk;
 }
-
+*/
 }  // namespace
-
+/*
 TFLMRegistration Register_CONV_2D() {
   return tflite::micro::RegisterOp(Init, ConvPrepare, Eval);
 }
-
+*/
 }  // namespace tflite

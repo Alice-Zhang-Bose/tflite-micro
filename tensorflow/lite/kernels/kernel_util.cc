@@ -194,6 +194,7 @@ TfLiteStatus GetIntermediatesSafe(const TfLiteContext* context,
 #endif  // TF_LITE_STATIC_MEMORY
 
 // Per-axis
+
 TfLiteStatus PopulateConvolutionQuantizationParams(
     TfLiteContext* context, const TfLiteTensor* input,
     const TfLiteTensor* filter, const TfLiteTensor* bias, TfLiteTensor* output,

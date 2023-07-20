@@ -15,8 +15,8 @@ limitations under the License.
 #ifndef TENSORFLOW_LITE_MICRO_KERNELS_SVDF_H_
 #define TENSORFLOW_LITE_MICRO_KERNELS_SVDF_H_
 
-#include "../../core/c/builtin_op_data.h"
-#include "../micro_common.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../micro_common.h"
 
 namespace tflite {
 
@@ -81,6 +81,7 @@ TfLiteStatus PrepareSvdf(TfLiteContext* context, TfLiteNode* node);
 // may still be target dependent. The only requirement is that every
 // implementation (reference or optimized) must define this function.
 TFLMRegistration Register_SVDF();
+
 
 #if defined(HEXAGON) || defined(CMSIS_NN) || defined(XTENSA)
 

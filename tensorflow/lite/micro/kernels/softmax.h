@@ -42,9 +42,7 @@ TFLMRegistration Register_SOFTMAX();
 // int8 input and int16 output.
 TFLMRegistration Register_SOFTMAX_INT8_INT16();
 #else
-inline TFLMRegistration Register_SOFTMAX_INT8_INT16() {
-  return Register_SOFTMAX();
-}
+TFLMRegistration Register_SOFTMAX_INT8_INT16();
 #endif
 
 #if defined(CMSIS_NN)
@@ -57,9 +55,9 @@ TFLMRegistration Register_SOFTMAX_INT8();
 TFLMRegistration Register_SOFTMAX_INT16();
 
 #else
-inline TFLMRegistration Register_SOFTMAX_INT8() { return Register_SOFTMAX(); }
+TFLMRegistration Register_SOFTMAX_INT8(); 
 
-inline TFLMRegistration Register_SOFTMAX_INT16() { return Register_SOFTMAX(); }
+TFLMRegistration Register_SOFTMAX_INT16();
 #endif
 
 }  // namespace tflite

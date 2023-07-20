@@ -33,7 +33,7 @@ namespace {
 /*Helper Functions*/
 
 /*Kernel functions*/
-
+/*
 void* UnidirectionalSequenceLstmInit(TfLiteContext* context, const char* buffer,
                                      size_t length) {
   (void)buffer;
@@ -159,12 +159,13 @@ TfLiteStatus UnidirectionalSequenceLstmEval(TfLiteContext* context,
   }
   return kTfLiteOk;
 }
-
+*/
 }  // namespace
-
+/*
 TFLMRegistration Register_UNIDIRECTIONAL_SEQUENCE_LSTM() {
   return tflite::micro::RegisterOp(UnidirectionalSequenceLstmInit,
                                    UnidirectionalSequenceLstmPrepare,
                                    UnidirectionalSequenceLstmEval);
 }
+*/
 }  // namespace tflite

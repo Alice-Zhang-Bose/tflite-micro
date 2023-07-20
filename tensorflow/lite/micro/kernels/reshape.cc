@@ -29,9 +29,9 @@ namespace ops {
 namespace micro {
 namespace reshape {
 
-constexpr int kInputTensor = 0;
-constexpr int kOutputTensor = 0;
-
+//constexpr int kInputTensor = 0;
+//constexpr int kOutputTensor = 0;
+/*
 TfLiteStatus ReshapeOutput(TfLiteContext* context, TfLiteNode* node) {
   MicroContext* micro_context = GetMicroContext(context);
 
@@ -111,12 +111,12 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
   }
   return kTfLiteOk;
 }
-
+*/
 }  // namespace reshape
 
-TFLMRegistration Register_RESHAPE() {
-  return tflite::micro::RegisterOp(nullptr, reshape::Prepare, reshape::Eval);
-}
+//TFLMRegistration Register_RESHAPE() {
+//  return tflite::micro::RegisterOp(nullptr, reshape::Prepare, reshape::Eval);
+//}
 
 }  // namespace micro
 }  // namespace ops

@@ -31,7 +31,7 @@ limitations under the License.
 #include "../micro_log.h"
 
 namespace tflite {
-
+/*
 TfLiteStatus EvalAdd(TfLiteContext* context, TfLiteNode* node,
                      TfLiteAddParams* params, const OpDataAdd* data,
                      const TfLiteEvalTensor* input1,
@@ -204,5 +204,5 @@ TfLiteStatus AddEval(TfLiteContext* context, TfLiteNode* node) {
 TFLMRegistration Register_ADD() {
   return tflite::micro::RegisterOp(AddInit, AddPrepare, AddEval);
 }
-
+*/
 }  // namespace tflite

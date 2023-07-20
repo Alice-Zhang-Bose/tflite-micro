@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "tensorflow/lite/micro/kernels/xtensa/lstm_eval.h"
+#include "lstm_eval.h"
 
 #include <math.h>
 #include <string.h>
@@ -22,13 +22,13 @@ limitations under the License.
 #include <memory>
 #include <vector>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/compatibility.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/op_macros.h"
-#include "tensorflow/lite/micro/kernels/xtensa/xtensa.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/compatibility.h"
+#include "../../../kernels/internal/portable_tensor_utils.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/op_macros.h"
+#include "xtensa.h"
 
 namespace tflite {
 namespace ops {

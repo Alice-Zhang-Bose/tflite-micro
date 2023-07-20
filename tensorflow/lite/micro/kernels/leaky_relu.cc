@@ -44,7 +44,7 @@ void QuantizeLeakyRelu(const LeakyReluOpData& data,
                                    tflite::micro::GetTensorShape(output),
                                    tflite::micro::GetTensorData<T>(output));
 }
-
+/*
 void* LeakyReluInit(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   (void)buffer;
@@ -93,5 +93,5 @@ TFLMRegistration Register_LEAKY_RELU() {
   return tflite::micro::RegisterOp(LeakyReluInit, LeakyReluPrepare,
                                    LeakyReluEval);
 }
-
+*/
 }  // namespace tflite

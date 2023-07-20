@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
+#include "depthwise_conv.h"
 
 #include "../../core/c/builtin_op_data.h"
 #include "../../core/c/common.h"
@@ -20,10 +21,9 @@ limitations under the License.
 #include "../../kernels/internal/reference/depthwiseconv_float.h"
 #include "../../kernels/internal/reference/integer_ops/depthwise_conv.h"
 #include "../../kernels/internal/tensor_ctypes.h"
-#include "kernel_util.h"
 #include "../../kernels/kernel_util.h"
+#include "kernel_util.h"
 #include "../../kernels/padding.h"
-#include "depthwise_conv.h"
 
 namespace tflite {
 
@@ -108,8 +108,16 @@ TfLiteStatus CalculateOpDataDepthwiseConv(
       micro_context->AllocateTempOutputTensor(node, kConvOutputTensor);
   TF_LITE_ENSURE(context, output != nullptr);
 
+
+  // Commenting out this block of code because it was causing this error I couldn't figure out how to resolve:
+  // W:/Bose/projects/walnutTFLite/bin/adau1797_2021_8/Debug/3rdParty/tflite-micro/tensorflow/lite/micro/kernels/depthwise_conv_common.o: undefined reference to `tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, TfLiteTensor const*, TfLiteTensor const*, TfLiteTensor const*, TfLiteTensor*, TfLiteFusedActivation const&, int*, int*, int*, int*, int*, int*, int)'
+  //W:/Bose/projects/walnutTFLite/bin/adau1797_2021_8/Debug/3rdParty/tflite-micro/tensorflow/lite/micro/kernels/depthwise_conv_common.o: in function `tflite::CalculateOpDataDepthwiseConv(TfLiteContext*, TfLiteNode*, TfLiteDepthwiseConvParams const&, int, int, int, int, int, int, TfLiteType, tflite::OpDataConv*)':
+  //C:/git\walnut\3rdParty\tflite-micro\tensorflow\lite\micro\kernels/depthwise_conv_common.cc:114: undefined reference to `tflite::PopulateConvolutionQuantizationParams(TfLiteContext*, TfLiteTensor const*, TfLiteTensor const*, TfLiteTensor const*, TfLiteTensor*, TfLiteFusedActivation const&, int*, int*, int*, int*, int*, int*, int)'
+  // !! COMMENTING OUT THE BLOCK OF CODE BELOW, COULD RESULT IN DOWNSTREAM ERRORS !!
+  
   // Note that quantized inference requires that all tensors have their
   // parameters set. This is usually done during quantized training.
+  /*
   if (data_type != kTfLiteFloat32) {
     int output_channels = filter->dims->data[kDepthwiseConvQuantizedDimension];
 
@@ -119,7 +127,8 @@ TfLiteStatus CalculateOpDataDepthwiseConv(
         &data->output_activation_min, &data->output_activation_max,
         data->per_channel_output_multiplier, data->per_channel_output_shift,
         output_channels));
-  }
+        */
+//  }
 
   data->input_zero_point = input->params.zero_point;
   data->filter_zero_point = filter->params.zero_point;

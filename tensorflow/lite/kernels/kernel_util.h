@@ -230,6 +230,7 @@ inline bool IsHybridOp(const TfLiteTensor* input, const TfLiteTensor* weight) {
 }
 
 // Check dimensionality match and populate OpData for Conv and DepthwiseConv.
+
 TfLiteStatus PopulateConvolutionQuantizationParams(
     TfLiteContext* context, const TfLiteTensor* input,
     const TfLiteTensor* filter, const TfLiteTensor* bias, TfLiteTensor* output,

@@ -18,9 +18,9 @@ limitations under the License.
 
 #include <cstdint>
 
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/types.h"
-#include "tensorflow/lite/micro/kernels/svdf.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/types.h"
+#include "../svdf.h"
 
 namespace tflite {
 #if defined(HIFIMINI)

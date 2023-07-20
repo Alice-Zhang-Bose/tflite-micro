@@ -13,25 +13,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/common.h"
-#include "tensorflow/lite/kernels/internal/quantization_util.h"
-#include "tensorflow/lite/kernels/internal/reference/integer_ops/conv.h"
-#include "tensorflow/lite/kernels/internal/tensor_ctypes.h"
-#include "tensorflow/lite/kernels/kernel_util.h"
-#include "tensorflow/lite/kernels/padding.h"
-#include "tensorflow/lite/micro/kernels/conv.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/common.h"
+#include "../../../kernels/internal/quantization_util.h"
+#include "../../../kernels/internal/reference/integer_ops/conv.h"
+#include "../../../kernels/internal/tensor_ctypes.h"
+#include "../../../kernels/kernel_util.h"
+#include "../../../kernels/padding.h"
+#include "../conv.h"
+#include "../kernel_util.h"
 
 namespace tflite {
 namespace {
 
+/*
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   TFLITE_DCHECK(context->AllocatePersistentBuffer != nullptr);
   return context->AllocatePersistentBuffer(context, sizeof(OpDataConv));
 }
-
+*/
 }  // namespace.
 
 TfLiteStatus ConvReferenceEvalInt8(TfLiteContext* context, TfLiteNode* node) {
@@ -69,8 +70,10 @@ TfLiteStatus ConvReferenceEvalInt8(TfLiteContext* context, TfLiteNode* node) {
 // TODO(b/189981943): This variant can be used for a smaller binary
 // since the optimized conv implementation currently adds a lot to
 // the binary size (~30KB to text section).
+/*
 TFLMRegistration Register_CONV_2D_INT8REF() {
   return tflite::micro::RegisterOp(Init, ConvPrepare, ConvReferenceEvalInt8);
 }
+*/
 
 }  // namespace tflite

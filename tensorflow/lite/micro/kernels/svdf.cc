@@ -31,6 +31,7 @@ limitations under the License.
 
 namespace tflite {
 namespace {
+/*
 
 void* Init(TfLiteContext* context, const char* buffer, size_t length) {
   (void)buffer;
@@ -103,5 +104,6 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
 TFLMRegistration Register_SVDF() {
   return tflite::micro::RegisterOp(Init, PrepareSvdf, Eval);
 }
-
+*/
+}
 }  // namespace tflite

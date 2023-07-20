@@ -18,11 +18,11 @@ limitations under the License.
 #include <cstdint>
 #include <memory>
 
-#include "tensorflow/lite/c/builtin_op_data.h"
-#include "tensorflow/lite/c/common.h"
-#include "tensorflow/lite/kernels/internal/portable_tensor_utils.h"
-#include "tensorflow/lite/kernels/internal/reference/portable_tensor_utils_impl.h"
-#include "tensorflow/lite/micro/kernels/kernel_util.h"
+#include "../../../core/c/builtin_op_data.h"
+#include "../../../core/c/common.h"
+#include "../../../kernels/internal/portable_tensor_utils.h"
+#include "../../../kernels/internal/reference/portable_tensor_utils_impl.h"
+#include "../kernel_util.h"
 
 namespace tflite {
 namespace ops {
