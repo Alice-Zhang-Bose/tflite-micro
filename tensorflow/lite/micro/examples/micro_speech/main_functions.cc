@@ -39,8 +39,8 @@ int32_t previous_time = 0;
 // Create an area of memory to use for input, output, and intermediate arrays.
 // The size of this will depend on the model you're using, and may need to be
 // determined by experimentation.
-constexpr int kTensorArenaSize = 10 * 1024;
-uint8_t tensor_arena[kTensorArenaSize];
+//constexpr int kTensorArenaSize = 25 * 1024;
+//uint8_t tensor_arena[kTensorArenaSize];
 int8_t feature_buffer[kFeatureElementCount];
 int8_t* model_input_buffer = nullptr;
 }  // namespace
@@ -79,7 +79,7 @@ void setup() {
   }
 
   // Build an interpreter to run the model with.
-  static tflite::MicroInterpreter static_interpreter(
+  static tflite::MicroInterpreter static_interpreter( // this function causes linker error
       model, micro_op_resolver, tensor_arena, kTensorArenaSize);
   interpreter = &static_interpreter;
 
@@ -112,6 +112,7 @@ void setup() {
   recognizer = &static_recognizer;
 
   previous_time = 0;
+  
 }
 
 // The name of this function is important for Arduino compatibility.
@@ -119,12 +120,14 @@ void loop() {
   // Fetch the spectrogram for the current time.
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
-  TfLiteStatus feature_status = feature_provider->PopulateFeatureData(
+
+  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes linker error
       previous_time, current_time, &how_many_new_slices);
   if (feature_status != kTfLiteOk) {
     MicroPrintf("Feature generation failed");
     return;
   }
+
   previous_time = current_time;
   // If no new audio samples have been received since last time, don't bother
   // running the network model.
@@ -160,4 +163,5 @@ void loop() {
   // just prints to the error console, but you should replace this with your
   // own function for a real application.
   RespondToCommand(current_time, found_command, score, is_new_command);
+  
 }
