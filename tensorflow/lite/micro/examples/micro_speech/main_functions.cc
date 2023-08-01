@@ -31,18 +31,18 @@ limitations under the License.
 namespace {
 const tflite::Model* model = nullptr;
 tflite::MicroInterpreter* interpreter = nullptr;
-TfLiteTensor* model_input = nullptr;
-FeatureProvider* feature_provider = nullptr;
-RecognizeCommands* recognizer = nullptr;
-int32_t previous_time = 0;
+//TfLiteTensor* model_input = nullptr;
+//FeatureProvider* feature_provider = nullptr;
+//RecognizeCommands* recognizer = nullptr;
+//int32_t previous_time = 0;
 
 // Create an area of memory to use for input, output, and intermediate arrays.
 // The size of this will depend on the model you're using, and may need to be
 // determined by experimentation.
-constexpr int kTensorArenaSize = 25 * 1024;
+constexpr int kTensorArenaSize = 1024;
 uint8_t tensor_arena[kTensorArenaSize];
-int8_t feature_buffer[kFeatureElementCount];
-int8_t* model_input_buffer = nullptr;
+//int8_t feature_buffer[kFeatureElementCount];
+//int8_t* model_input_buffer = nullptr;
 }  // namespace
 
 // The name of this function is important for Arduino compatibility.
@@ -82,7 +82,7 @@ void setup() {
   static tflite::MicroInterpreter static_interpreter( // this function causes linker error
       model, micro_op_resolver, tensor_arena, kTensorArenaSize);
   interpreter = &static_interpreter;
-
+/*
   // Allocate memory from the tensor_arena for the model's tensors.
   TfLiteStatus allocate_status = interpreter->AllocateTensors();
   if (allocate_status != kTfLiteOk) {
@@ -112,9 +112,9 @@ void setup() {
   recognizer = &static_recognizer;
 
   previous_time = 0;
-  
+  */
 }
-
+/*
 // The name of this function is important for Arduino compatibility.
 void loop() {
   // Fetch the spectrogram for the current time.
@@ -165,3 +165,4 @@ void loop() {
   RespondToCommand(current_time, found_command, score, is_new_command);
   
 }
+*/
