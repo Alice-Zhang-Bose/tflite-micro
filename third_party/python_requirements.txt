@@ -222,10 +222,6 @@ mako==1.2.4 \
     --hash=sha256:c97c79c018b9165ac9922ae4f32da095ffd3c4e6872b45eded42926deea46818 \
     --hash=sha256:d60a3903dc3bb01a18ad6a89cdbe2e4eadc69c0bc8ef1e3773ba53d44c3f7a34
     # via -r third_party/python_requirements.in
-markdown==3.4.3 \
-    --hash=sha256:065fd4df22da73a625f14890dd77eb8040edcbd68794bcd35943be14490608b2 \
-    --hash=sha256:8bf101198e004dc93e84a12a7395e31aac6a9c9942848ae1d99b9d72cf9b3520
-    # via tensorboard
 markupsafe==2.1.2 \
     --hash=sha256:0576fe974b40a400449768941d5d0858cc624e3249dfd1e0c33674e5c7ca7aed \
     --hash=sha256:085fd3201e7b12809f9e6e9bc1e5c96a368c8523fad5afb02afe3c051ae4afcc \
@@ -492,9 +488,6 @@ six==1.16.0 \
     #   google-auth
     #   google-pasta
     #   tensorflow-cpu
-tensorboard==2.12.3 \
-    --hash=sha256:b4a69366784bc347e02fbe7d847e01896a649ca52f8948a11005e205dcf724fb
-    # via tensorflow-cpu
 tensorboard-data-server==0.7.0 \
     --hash=sha256:64aa1be7c23e80b1a42c13b686eb0875bb70f5e755f4d2b8de5c1d880cf2267f \
     --hash=sha256:753d4214799b31da7b6d93837959abebbc6afa86e69eacf1e9a317a48daa31eb \
@@ -516,22 +509,6 @@ tensorflow-cpu==2.12.0 \
     # via -r third_party/python_requirements.in
 tensorflow-estimator==2.12.0 \
     --hash=sha256:59b191bead4883822de3d63ac02ace11a83bfe6c10d64d0c4dfde75a50e60ca1
-    # via tensorflow-cpu
-tensorflow-io-gcs-filesystem==0.32.0 \
-    --hash=sha256:045d51bba586390d0545fcd8a18727d62b175eb142f6f4c6d719d39de40774cd \
-    --hash=sha256:05e65d3cb6c93a7929b384d86c6369c63cbbab8a770440a3d95e094878403f9f \
-    --hash=sha256:122be149e5f6a030f5c2901be0cc3cb07619232f7b03889e2cdf3da1c0d4f92f \
-    --hash=sha256:1ce80e1555d6ee88dda67feddf366cc8b30252b5837a7a17303df7b06a71fc2e \
-    --hash=sha256:21de7dcc06eb1e7de3c022b0072d90ba35ef886578149663437aa7a6fb5bf6b3 \
-    --hash=sha256:28202492d904a6e280cf27560791e87ac1c7566000db82065d63a70c27008af2 \
-    --hash=sha256:336d9b3fe6b55aea149c4f6aa1fd6ffaf27d4e5c37e55a182340b47caba38846 \
-    --hash=sha256:5635df0bbe40f971dc1b946e3372744b0bdfda45c38ffcd28ef53a32bb8da4da \
-    --hash=sha256:74a7e25e83d4117a7ebb09a3f247553a5497393ab48c3ee0cf0d17b405026817 \
-    --hash=sha256:79fdd02103b8ae9f8b89af41f744c013fa1caaea709de19833917795e3063857 \
-    --hash=sha256:7f15fd22e592661b10de317be2f42a0f84be7bfc5e6a565fcfcb04b60d625b78 \
-    --hash=sha256:8214cdf85bea694160f9035ff395221c1e25e119784ccb4c104919b1f5dec84e \
-    --hash=sha256:842f5f09cd756bdb3b4d0b5571b3a6f72fd534d42da938b9acf0ef462995eada \
-    --hash=sha256:db682e9a510c27dd35710ba5a2c62c371e25b727741b2fe3a920355fa501e947
     # via tensorflow-cpu
 termcolor==2.3.0 \
     --hash=sha256:3afb05607b89aed0ffe25202399ee0867ad4d3cb4180d98aaf8eefa6a5f7d475 \
