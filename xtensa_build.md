@@ -7,38 +7,57 @@
    $ git checkout 8c0170a5bc64b173e8bdda3e8e90dffe2a892a98
    $ git cherry-pick 625c3a467db4a949edbdafeaa77333a2c6179b35
    ```
-3. In `cygwin`, run `dos2unix` on all files in this repo.
+3. In `cygwin`, create a python virtual environment in the root directory of this repo.
+   ```
+   $ python -m venv tflite_env
+   ```
+4. Run `dos2unix` on all files in this repo.
+   ```
+   $ find . -type f -print0 | xargs -0 dos2unix
+   ```
+5. Install required packages for virtual environment.
     ```
-    $ find . -type f -print0 | xargs -0 dos2unix
-    ```
-4. Create python virtual environment in the root directory of this repo and install required packages according to requirements.txt file.
-    ```
-    $ python -m venv tflite_env
     $ source tflite_env/Scripts/activate
     $ pip install tensorflow-io-gcs-filesystem==0.31.0
     $ pip install markdown==3.4.3
     $ pip install tensorflow-intel==2.12.0
     $ pip install -r third_party/python_requirements.txt
     ```
-5. Some (~3) packages fail the install from the `requirements.txt` file. In those cases, I removed the hash from the `requirements.txt` and tried running `pip install -r third_party/python_requirements.txt` again or manually installed those packages with `pip install <package>`.
 6. Export environment variables in `.tflmrc`. NOTE: this file currently assumes the root directory of this repo lives at `/c/git/`. Edit `source /cygdrive/c/git/tflite-micro/tflite_env/Scripts/activate` in the script to match the path of your virtual environment.
    ```
-   source .tflmrc
+   $ source .tflmrc
    ```
 7. The `hello_world` test should now pass.
    ```
-   make -f  tensorflow/lite/micro/tools/make/Makefile test_hello_world_test
+   $ make -f  tensorflow/lite/micro/tools/make/Makefile test_hello_world_test
+   ```
+   If successful, this command should print:
+   ```
+   tensorflow/lite/micro/tools/make/test_latency_log.sh hello_world_test  gen/windows_x86_64_default/bin/hello_world_test '~~~ALL TESTS PASSED~~~' windows
+
+   "Unique Tag","Total ticks across all events with that tag."
+   FULLY_CONNECTED, 0
+   total number of ticks, 0
+   
+   [RecordingMicroAllocator] Arena allocation total 2344 bytes
+   [RecordingMicroAllocator] Arena allocation head 136 bytes
+   [RecordingMicroAllocator] Arena allocation tail 2208 bytes
+   [RecordingMicroAllocator] 'TfLiteEvalTensor data' used 240 bytes with alignment overhead (requested 240 bytes for 10 allocations)
+   [RecordingMicroAllocator] 'Persistent TfLiteTensor data' used 128 bytes with alignment overhead (requested 128 bytes for 2 tensors)
+   [RecordingMicroAllocator] 'Persistent buffer data' used 1156 bytes with alignment overhead (requested 1100 bytes for 7 allocations)
+   [RecordingMicroAllocator] 'NodeAndRegistration struct' used 192 bytes with alignment overhead (requested 192 bytes for 3 NodeAndRegistration structs)
+   ~~~ALL TESTS PASSED~~~
    ```
 
 ## Build and test keyword detection (micro_speech) example
 1. Build the `micro_speech` example with the Xtensa tools for the adau1797 core in cygwin.  
     ```
-    $ make -f  tensorflow/lite/micro/tools/make/Makefile micro_speech TARGET=xtensa TARGET_ARCH=hifi3
+    $ make -f tensorflow/lite/micro/tools/make/Makefile micro_speech TARGET=xtensa TARGET_ARCH=hifi3
     ```
     If successful, this command should generate a bin file under `gen/xtensa_hifi3_default/bin/micro_speech`.
 2. Run the `micro_speech` test.  
     ```
-    $ make -f  tensorflow/lite/micro/tools/make/Makefile test_micro_speech_test TARGET=xtensa TARGET_ARCH=hifi3
+    $ make -f tensorflow/lite/micro/tools/make/Makefile test_micro_speech_test TARGET=xtensa TARGET_ARCH=hifi3
     ```
     If successful, this command should print:
     ```
@@ -53,7 +72,7 @@
     ```
 
 ## Deploy program to board 
-TODO: Verify that this actually loads something meaningful onto the board
+TODO: Verify that this actually loads something meaningful onto the board. At the moment, I'm not sure that this process works since the debugger seems to load 127720 bytes while the size of the micro_speech bin file is 632kB.
 1. Load the program onto the board.  
     a. In one cygwin terminal, launch Xtensa OCD:
     ```
