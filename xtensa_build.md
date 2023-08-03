@@ -1,18 +1,27 @@
 ## Environment Setup
 1. In addition to the cygwin packages needed for walnut [listed here](https://wiki.bose.com/pages/viewpage.action?spaceKey=CER&title=Walnut+-+Development+Environment+Setup#WalnutDevelopmentEnvironmentSetup-TerminalSetup:Cygwin), install `wget` and `unzip` packages in cygwin.
-2. Clone this repo.
-3. Run `dos2unix` on all files in this repo.
+2. In `git bash``, clone this repo and checkout this specific commit: `8c0170a5bc64b173e8bdda3e8e90dffe2a892a98`.
+   ```
+   $ git clone git@github.com:Alice-Zhang-Bose/tflite-micro.git
+   $ cd tflite-micro
+   $ git checkout 8c0170a5bc64b173e8bdda3e8e90dffe2a892a98
+   $ git cherry-pick 625c3a467db4a949edbdafeaa77333a2c6179b35
+   ```
+3. In `cygwin`, run `dos2unix` on all files in this repo.
     ```
-    $ cd tflite-micro
     $ find . -type f -print0 | xargs -0 dos2unix
     ```
 4. Create python virtual environment in the root directory of this repo and install required packages according to requirements.txt file.
     ```
     $ python -m venv tflite_env
+    $ source tflite_env/Scripts/activate
+    $ pip install tensorflow-io-gcs-filesystem==0.31.0
+    $ pip install markdown==3.4.3
+    $ pip install tensorflow-intel==2.12.0
     $ pip install -r third_party/python_requirements.txt
     ```
 5. Some (~3) packages fail the install from the `requirements.txt` file. In those cases, I removed the hash from the `requirements.txt` and tried running `pip install -r third_party/python_requirements.txt` again or manually installed those packages with `pip install <package>`.
-6. Export environment variables in `.tflmrc`. TODO: this file currently assumes the root directory of this repo lives at `/c/git/`.
+6. Export environment variables in `.tflmrc`. NOTE: this file currently assumes the root directory of this repo lives at `/c/git/`. Edit `source /cygdrive/c/git/tflite-micro/tflite_env/Scripts/activate` in the script to match the path of your virtual environment.
    ```
    source .tflmrc
    ```
@@ -21,15 +30,15 @@
    make -f  tensorflow/lite/micro/tools/make/Makefile test_hello_world_test
    ```
 
-## Build and deploy
-1. Build the `micro_speech` example with the Xtensa tools for the adau1797 core.  
+## Build and test keyword detection (micro_speech) example
+1. Build the `micro_speech` example with the Xtensa tools for the adau1797 core in cygwin.  
     ```
-    make -f  tensorflow/lite/micro/tools/make/Makefile micro_speech TARGET=xtensa TARGET_ARCH=hifi3
+    $ make -f  tensorflow/lite/micro/tools/make/Makefile micro_speech TARGET=xtensa TARGET_ARCH=hifi3
     ```
     If successful, this command should generate a bin file under `gen/xtensa_hifi3_default/bin/micro_speech`.
 2. Run the `micro_speech` test.  
     ```
-    make -f  tensorflow/lite/micro/tools/make/Makefile test_micro_speech_test TARGET=xtensa TARGET_ARCH=hifi3
+    $ make -f  tensorflow/lite/micro/tools/make/Makefile test_micro_speech_test TARGET=xtensa TARGET_ARCH=hifi3
     ```
     If successful, this command should print:
     ```
@@ -42,7 +51,10 @@
 
     Running micro_speech_test took 60.999 seconds
     ```
-3. Load the program onto the board.  
+
+## Deploy program to board 
+TODO: Verify that this actually loads something meaningful onto the board
+1. Load the program onto the board.  
     a. In one cygwin terminal, launch Xtensa OCD:
     ```
     $ "C:/Program Files (x86)/Tensilica/Xtensa OCD Daemon 14.08/xt-ocd" --config=C:/Users/az1058168/Desktop/topology_no_security.xml -dTD=30 -T 20
@@ -52,11 +64,11 @@
     ```
     $ "C:/usr/xtensa/XtDevTools/install/tools/RI-2021.8-win32/XtensaTools/bin/xt-gdb.exe" --xtensa-system=C:/usr/xtensa/XtDevTools/install/builds/RI-2021.8-win32/adau1797_2021_8/config --xtensa-core=adau1797_2021_8 gen/xtensa_hifi3_default/bin/micro_speech
     ```
-4. After Xtensa GDB is launched, in the Xtensa GDB terminal run the following commands sequentially:  
+2. After Xtensa GDB is launched, in the Xtensa GDB terminal run the following commands sequentially:  
     a. `target remote localhost:20000`  
     b. `reset`  
     c. `load`  
-    After running load, the debugger should print something like the following: (TODO: verify that this is actually loading something meaningful onto the board)
+    After running load, the debugger should print something like the following: 
     ```
     (xt-gdb) load
     Loading section .MemoryExceptionVector.literal, size 0x4 lma 0x40000
