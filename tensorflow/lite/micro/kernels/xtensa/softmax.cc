@@ -66,6 +66,10 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
     return XtensaEvalSoftmaxInt8Int16(context, node);
   }
 
+  if  (input->type == kTfLiteInt8) {
+      MicroPrintf("input->type = kTfliteInt8");
+  }
+
   TFLITE_DCHECK(node->user_data != nullptr);
 
 #if defined(HIFI4) || defined(HIFI5)
@@ -104,6 +108,7 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
   }
 
   if (input->type == kTfLiteFloat32) {
+    MicroPrintf("input->type = kTfliteFloat32");
     tflite::reference_ops::Softmax(params, tflite::micro::GetTensorShape(input),
                                    tflite::micro::GetTensorData<float>(input),
                                    tflite::micro::GetTensorShape(output),
@@ -119,8 +124,9 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
 }  // namespace
 
 TFLMRegistration Register_SOFTMAX() {
+  MicroPrintf("Xtensa register_softmax");
   return tflite::micro::RegisterOp(XtensaInitSoftmax, XtensaPrepareSoftmax,
-                                   Eval);
+                                   Eval); //this calls on SoftmaxPrepare which is generating the UINT8!=FLOAT32 error
 }
 
 }  // namespace tflite

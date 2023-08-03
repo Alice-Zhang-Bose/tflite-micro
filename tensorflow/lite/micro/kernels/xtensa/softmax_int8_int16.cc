@@ -112,6 +112,7 @@ TfLiteStatus XtensaPrepareSoftmax(TfLiteContext* context, TfLiteNode* node) {
 #if defined(HIFI4) || defined(HIFI5)
   return PrepareHifi(context, node);
 #else
+  MicroPrintf("XtensaPrepareSoftmax");
   TF_LITE_ENSURE_OK(context, SoftmaxPrepare(context, node));
 #if defined(VISION_P6)
   TF_LITE_ENSURE_OK(context, SoftmaxPrepareVision(context, node));
