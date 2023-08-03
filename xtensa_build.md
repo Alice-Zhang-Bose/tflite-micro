@@ -1,6 +1,6 @@
 ## Environment Setup
 1. In addition to the cygwin packages needed for walnut [listed here](https://wiki.bose.com/pages/viewpage.action?spaceKey=CER&title=Walnut+-+Development+Environment+Setup#WalnutDevelopmentEnvironmentSetup-TerminalSetup:Cygwin), install `wget` and `unzip` packages in cygwin.
-2. In `git bash``, clone this repo and checkout this specific commit: `8c0170a5bc64b173e8bdda3e8e90dffe2a892a98`.
+2. In `git bash`, clone this repo and checkout this specific commit: `8c0170a5bc64b173e8bdda3e8e90dffe2a892a98`.
    ```
    $ git clone git@github.com:Alice-Zhang-Bose/tflite-micro.git
    $ cd tflite-micro
@@ -50,7 +50,7 @@
    ```
 
 ## Build and test keyword detection (micro_speech) example
-1. Build the `micro_speech` example with the Xtensa tools for the adau1797 core in cygwin.  
+1. Build the `micro_speech` example with the Xtensa tools for the adau1797 core in `cygwin`.  
     ```
     $ make -f tensorflow/lite/micro/tools/make/Makefile micro_speech TARGET=xtensa TARGET_ARCH=hifi3
     ```
