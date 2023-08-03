@@ -19,7 +19,8 @@ limitations under the License.
 #include "command_responder.h"
 #include "feature_provider.h"
 #include "micro_features/micro_model_settings.h"
-#include "simple_features/model.h"
+//#include "simple_features/model.h"
+#include "micro_speech_model.h"
 #include "recognize_commands.h"
 #include "../../micro_interpreter.h"
 #include "../../micro_log.h"
@@ -51,7 +52,7 @@ void setup() {
 
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
-  model = tflite::GetModel(g_model);
+  model = tflite::GetModel(micro_speech_tflite);
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     MicroPrintf(
         "Model provided is schema version %d not equal "
@@ -121,7 +122,7 @@ void loop() {
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
 
-//  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causeserror on board
+//  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes error on board
 //      previous_time, current_time, &how_many_new_slices);
 //  if (feature_status != kTfLiteOk) {
 //    MicroPrintf("Feature generation failed");
