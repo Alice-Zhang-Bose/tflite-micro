@@ -34,7 +34,7 @@ extern "C++" {
 //#endif	
 
 # ifndef KISS_FFT_MALLOC
-#  define KISS_FFT_MALLOC malloc
+#  define KISS_FFT_MALLOC malloc // taken from https://github.com/mborgerding/kissfft/blob/master/kiss_fft.h#L64
 # endif
 # ifndef KISS_FFT_FREE
 #  define KISS_FFT_FREE free
