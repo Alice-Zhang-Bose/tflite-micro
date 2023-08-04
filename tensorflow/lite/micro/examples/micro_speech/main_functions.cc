@@ -40,7 +40,7 @@ int32_t previous_time = 0;
 // Create an area of memory to use for input, output, and intermediate arrays.
 // The size of this will depend on the model you're using, and may need to be
 // determined by experimentation.
-constexpr int kTensorArenaSize = 12*1024;
+constexpr int kTensorArenaSize = 30*1024;
 uint8_t tensor_arena[kTensorArenaSize];
 int8_t feature_buffer[kFeatureElementCount];
 int8_t* model_input_buffer = nullptr;
@@ -122,17 +122,18 @@ void loop() {
   const int32_t current_time = LatestAudioTimestamp();
   int how_many_new_slices = 0;
 
-//  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes error on board
-//      previous_time, current_time, &how_many_new_slices);
-//  if (feature_status != kTfLiteOk) {
-//    MicroPrintf("Feature generation failed");
-//    return;
-//  }
+  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes error on board
+      previous_time, current_time, &how_many_new_slices);
+  if (feature_status != kTfLiteOk) {
+    MicroPrintf("Feature generation failed");
+    //return;
+  }
 
   previous_time = current_time;
   // If no new audio samples have been received since last time, don't bother
   // running the network model.
   if (how_many_new_slices == 0) {
+    MicroPrintf("num_new_slices=0");
     return;
   }
 

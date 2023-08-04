@@ -124,7 +124,6 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
 }  // namespace
 
 TFLMRegistration Register_SOFTMAX() {
-  MicroPrintf("Xtensa register_softmax");
   return tflite::micro::RegisterOp(XtensaInitSoftmax, XtensaPrepareSoftmax,
                                    Eval); //this calls on SoftmaxPrepare which is generating the UINT8!=FLOAT32 error
 }

@@ -47,13 +47,14 @@ int FftPopulateState(struct FftState* state, size_t input_size) {
     fprintf(stderr, "Kiss memory sizing failed.\n");
     return 0;
   }
+  printf("scratch size: %zu\n", scratch_size);
   state->scratch = malloc(scratch_size);
   if (state->scratch == nullptr) {
     fprintf(stderr, "Failed to alloc fft scratch buffer\n");
     return 0;
   }
   state->scratch_size = scratch_size;
-  // Let kissfft configure the scratch space we just allocated
+  // Let kissfft configure the scratch space we just allocated !! this causes errors
   kfft_cfg = kissfft_fixed16::kiss_fftr_alloc(state->fft_size, 0,
                                               state->scratch, &scratch_size);
   if (kfft_cfg != state->scratch) {
