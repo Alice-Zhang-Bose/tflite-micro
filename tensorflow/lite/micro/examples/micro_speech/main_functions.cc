@@ -120,27 +120,27 @@ void setup() {
 void loop() {
   // Fetch the spectrogram for the current time.
   const int32_t current_time = LatestAudioTimestamp();
-  int how_many_new_slices = 0;
+//  int how_many_new_slices = 0;
 
-  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes error on board
-      previous_time, current_time, &how_many_new_slices);
-  if (feature_status != kTfLiteOk) {
-    MicroPrintf("Feature generation failed");
-    //return;
-  }
-
-  previous_time = current_time;
-  // If no new audio samples have been received since last time, don't bother
-  // running the network model.
-  if (how_many_new_slices == 0) {
-    MicroPrintf("num_new_slices=0");
-    return;
-  }
-
-  // Copy feature buffer to input tensor
-  for (int i = 0; i < kFeatureElementCount; i++) {
-    model_input_buffer[i] = feature_buffer[i];
-  }
+//  TfLiteStatus feature_status = feature_provider->PopulateFeatureData( // this function causes error on board
+//      previous_time, current_time, &how_many_new_slices);
+//  if (feature_status != kTfLiteOk) {
+//    MicroPrintf("Feature generation failed");
+//    //return;
+//  }
+//
+//  previous_time = current_time;
+//  // If no new audio samples have been received since last time, don't bother
+//  // running the network model.
+//  if (how_many_new_slices == 0) {
+//    MicroPrintf("num_new_slices=0");
+//    return;
+//  }
+//
+//  // Copy feature buffer to input tensor
+//  for (int i = 0; i < kFeatureElementCount; i++) {
+//    model_input_buffer[i] = feature_buffer[i];
+//  }
 
   // Run the model on the spectrogram input and make sure it succeeds.
   TfLiteStatus invoke_status = interpreter->Invoke();
@@ -165,5 +165,6 @@ void loop() {
   // just prints to the error console, but you should replace this with your
   // own function for a real application.
   RespondToCommand(current_time, found_command, score, is_new_command);
+  MicroPrintf("end of loop() function");
   
 }

@@ -67,9 +67,7 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
     }
 
     case kTfLiteInt8: {
-      switch (filter->type) {
-        // !! COMMENTING OUT DUE TO ERRORS !!
-        /*
+      switch (filter->type) {      
         case kTfLiteInt8: {
           return XtensaEvalFullyConnectedQuantizedInt8(
               context, node, data, input, filter, bias, output);
@@ -78,7 +76,7 @@ TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) {
           return XtensaEvalFullyConnectedQuantizedInt8(
               context, node, data, input, filter, bias, output);
         }
-        */
+        
         default: {
           MicroPrintf("Filter type %s (%d) not supported.",
                       TfLiteTypeGetName(filter->type), input->type);
