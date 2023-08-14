@@ -23,7 +23,7 @@
     $ pip install tensorflow-intel==2.12.0
     $ pip install -r third_party/python_requirements.txt
     ```
-6. Export environment variables in `.tflmrc`. NOTE: this file currently assumes the root directory of this repo lives at `/c/git/`. Edit `source /cygdrive/c/git/tflite-micro/tflite_env/Scripts/activate` in the script to match the path of your virtual environment.
+6. Export environment variables in `.tflmrc`. NOTE: this file currently assumes the root directory of this repo lives at `/c/git/`. Edit `source /cygdrive/c/git/tflite-micro/tflite_env/Scripts/activate` in the script to match the path of your virtual environment. Also edit the path for your virtual environment on lines 541, 571, and 587 in `tensorflow/lite/micro/tools/make/Makefile` and line 34 in `tensorflow/lite/micro/tools/make/helper_functions.inc`.
    ```
    $ source .tflmrc
    ```
